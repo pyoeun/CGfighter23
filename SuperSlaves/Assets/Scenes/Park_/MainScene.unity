@@ -270,6 +270,7 @@ MonoBehaviour:
   m_p1: {fileID: 1079768314}
   m_p2: {fileID: 1713849387}
   m_ingameManager: {fileID: 0}
+  m_gameManagerObj: {fileID: 1780563558}
 --- !u!114 &268343232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2865,8 +2866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fb0a39afb24f04e9e909af888b2659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_player1: {fileID: 50404612}
-  m_player2: {fileID: 462434496}
+  m_player1: {fileID: 1079768309}
+  m_player2: {fileID: 1713849380}
   m_IngameTimer: {fileID: 1013430144}
   m_hitPrefab: {fileID: 8121874784112726250, guid: 81ca3851b82696b44952720c73236ccc, type: 3}
   m_defensePrefab: {fileID: 2319781598066829374, guid: b6fcfeb9265866a449bf951c3219e43c, type: 3}

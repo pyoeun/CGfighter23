@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Park_/TutoDialogTest.unity
+    guid: ec3ee5cd8c3a420408e88defa8022363
+  - enabled: 1
     path: Assets/Scenes/Park_/Ingame.unity
     guid: dfb383bd6ed7fc94fac4b2cf269b56dd
   - enabled: 1
