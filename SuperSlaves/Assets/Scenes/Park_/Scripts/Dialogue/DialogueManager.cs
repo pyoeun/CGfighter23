@@ -5,7 +5,7 @@ using UnityEngine;
 using XLua;
 
 using DialogueSystem;
-
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -50,14 +50,25 @@ public class DialogueManager : MonoBehaviour
     public void RunDialog(String pName)
     {
         var dialogue = m_dialogueLuaEnv.Global.Get<IEnumerator<IDialogueLine>>(pName);
-        Debug.Log("»Ï");
-        if(dialogue == null)
+        if (dialogue == null)
         {
             throw new Exception($"Dialogue not found : {pName}");
         }
 
         RunDialog(dialogue);
     }
+
+    //public IEnumerator RunDialogue(String pName)
+    //{
+    //    var dialogue = m_dialogueLuaEnv.Global.Get<IEnumerator<IDialogueLine>>(pName);
+    //    if (dialogue == null)
+    //    {
+    //        throw new Exception($"Dialogue not found : {pName}");
+    //    }
+
+    //    yield return StartCoroutine(RunDialogue(dialogue));
+    //    yield break;
+    //}
 }
 
 

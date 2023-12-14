@@ -1,0 +1,5 @@
+PCMoveTutorials = CreateDialog(function ()
+    Talk("희위쌤","첫번째 선수는 WASD키로 이동할 수 있습니다.","HwiwiT")
+    Talk("희위쌤","두번째 선수는 화살표 키로 이동할 수 있습니다.","HwiwiT")
+    Talk("희위쌤","여러번 듣는 것 보다 한 번 해보는 게 더 도움이 될 수 있다...","HwiwiT")
+end)

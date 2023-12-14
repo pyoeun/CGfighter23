@@ -9,7 +9,6 @@ using Unity.VisualScripting;
 
 public class ControlManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI m_textForTest;
     [SerializeField] private String m_playerName;
     [SerializeField] private PlayerTypes m_playerType;
     [SerializeField] private float m_skillCooltime;
@@ -55,7 +54,6 @@ public class ControlManager : MonoBehaviour
         {
             CanSkill = true;
         }
-        PrintControls();
     }
 
     public void AddKeys(Keys key)
@@ -101,16 +99,6 @@ public class ControlManager : MonoBehaviour
     {
         m_skillTimer = 0;
         CanSkill = false;
-    }
-
-    public void PrintControls()
-    {
-        m_textForTest.text = $"{m_playerName} Buffer : ";
-
-        foreach (Keys keyCode in PressedKeys)
-        {
-            m_textForTest.text += $"{keyCode} ";
-        }
     }
 
     private void ShowCoolTime()
