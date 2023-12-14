@@ -367,12 +367,12 @@ public class ReadyManager : MonoBehaviour
                     if (P2 - 5 < 0)
                         StartCoroutine(ShakeP2_V());
                     else
-                        P1_next = P2 - 5;
+                        P2_next = P2 - 5;
                 }
                 if (Input.GetKeyDown(KeyCode.DownArrow)) //¾Æ
                 {
                     if (P2 + 5 >= 10)
-                        StartCoroutine(ShakeP1_V());
+                        StartCoroutine(ShakeP2_V());
                     else
                         P2_next = P2 + 5;
                 }
