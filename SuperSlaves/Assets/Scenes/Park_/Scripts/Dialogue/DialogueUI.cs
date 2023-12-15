@@ -26,6 +26,7 @@ public class DialogueUI : MonoBehaviour, IDialogueInput, IDialogueOutput
     private Int32 m_lastIndex;
     private Coroutine m_printRoutine;
     private Boolean m_isPrinting;
+    private Boolean m_isAddingRichTextTag;
 
 
     private void Awake()
@@ -111,6 +112,7 @@ public class DialogueUI : MonoBehaviour, IDialogueInput, IDialogueOutput
         m_talkLineText.text = "";
         m_talkerNameText.text = m_talkerName;
         m_illustImage.sprite = Resources.Load<Sprite>($"Illust/{m_illustPath}");
+        m_isAddingRichTextTag = false;
 
         if (m_selections == null)
         {
@@ -118,6 +120,15 @@ public class DialogueUI : MonoBehaviour, IDialogueInput, IDialogueOutput
             foreach (var ch in m_talkLine)
             {
                 m_talkLineText.text += ch;
+                if(ch == '<' || m_isAddingRichTextTag)
+                {
+                    m_isAddingRichTextTag = true;
+                    if(ch == '>')
+                    {
+                        m_isAddingRichTextTag = false;
+                    }
+                    continue;
+                }
                 yield return new WaitForSeconds(0.08f);
 
                 if(!m_isPrinting)

@@ -862,8 +862,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dialogueManager: {fileID: 555548770}
-  m_platform: PC
+  m_platform: NoriBox
   m_dialogueCanvas: {fileID: 631517610}
+  m_tutorialGameManager: {fileID: 1780563561}
 --- !u!114 &555548770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,8 +1850,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: XX
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 710886f9b277e5242a8ab160e342bb11, type: 2}
+  m_sharedMaterial: {fileID: 8711276128023695184, guid: 710886f9b277e5242a8ab160e342bb11, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,6 +14,11 @@ public class TutorialGameManager : MonoBehaviour, IGameManager
     [SerializeField] private GameObject m_hitPrefab;
     [SerializeField] private GameObject m_defensePrefab;
 
+    private Boolean[] m_p1Tutorial = new Boolean[System.Enum.GetValues(typeof(TutorialSeq)).Length];
+    private Boolean[] m_p2Tutorial = new Boolean[System.Enum.GetValues(typeof(TutorialSeq)).Length];
+    public Boolean[] IsPlayingTutorial { get; private set; }
+    public Boolean[] IsReady { get; private set; }
+
     //private float m_maxPlayTime = 60f;
     //private float m_ingameTime;
 
@@ -21,6 +27,15 @@ public class TutorialGameManager : MonoBehaviour, IGameManager
 
     private void Awake()
     {
+        IsPlayingTutorial = new Boolean[System.Enum.GetValues(typeof(TutorialSeq)).Length];
+        IsReady = new Boolean[System.Enum.GetValues(typeof(TutorialSeq)).Length];
+        for (int i = 0; i < System.Enum.GetValues(typeof(TutorialSeq)).Length; i++)
+        {
+            IsReady[i] = false;
+            IsPlayingTutorial[i] = false;
+            m_p1Tutorial[i] = false;
+            m_p2Tutorial[i] = false;
+        }
         Sign = 1;
     }
 
@@ -66,4 +81,40 @@ public class TutorialGameManager : MonoBehaviour, IGameManager
         var def = Instantiate(m_defensePrefab);
         def.transform.position = pPos;
     }
+
+    public void SettingTutorialProgress(int pSeq, int pPlayerType)
+    {
+        if (!IsPlayingTutorial[pSeq])
+        {
+            return;
+        }
+        try
+        {
+            if(pPlayerType <= 1)
+            {
+                m_p1Tutorial[pSeq] = true;
+            }
+            else
+            {
+                m_p2Tutorial[pSeq] = true;
+            }
+
+            if (m_p1Tutorial[pSeq] && m_p2Tutorial[pSeq])
+            {
+                IsReady[pSeq] = true;
+            }
+        }
+        catch(Exception e)
+        {
+            Debug.LogError(e);
+        }
+    }
+}
+
+public enum TutorialSeq
+{
+    Move,
+    Punch,
+    Kick,
+    Guard,
 }

@@ -19,10 +19,6 @@ public class PlayerManager : MonoBehaviour
         {
             m_gameManager = m_gameManagerObj.GetComponent<IGameManager>();
         }
-        else
-        {
-            Debug.Log("¿¨");
-        }
     }
 
     private void OnMoveP1(InputValue value)
@@ -58,21 +54,38 @@ public class PlayerManager : MonoBehaviour
         {
             m_p1.AddKeys(Keys.Down);
         }
+
+        if(m_gameManagerObj != null)
+        {
+            m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(0, 1);
+        }
     }
 
     private void OnPunchP1()
     {
         m_p1.AddKeys(Keys.Punch);
+        if (m_gameManagerObj != null)
+        {
+            m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(1, 1);
+        }
     }
 
     private void OnKickP1()
     {
         m_p1.AddKeys(Keys.Kick);
+        if (m_gameManagerObj != null)
+        {
+            m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(2, 1);
+        }
     }
 
     private void OnGuardP1()
     {
         m_p1.AddKeys(Keys.Guard);
+        if (m_gameManagerObj != null)
+        {
+            m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(3, 1);
+        }
     }
 
     private void OnMoveP2(InputValue value)
@@ -108,20 +121,37 @@ public class PlayerManager : MonoBehaviour
         {
             m_p2.AddKeys(Keys.Down);
         }
+
+        if (m_gameManagerObj != null)
+        {
+            m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(0, 2);
+        }
     }
 
     private void OnPunchP2()
     {
         m_p2.AddKeys(Keys.Punch);
+        if (m_gameManagerObj != null)
+        {
+            m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(1, 2);
+        }
     }
 
     private void OnKickP2()
     {
         m_p2.AddKeys(Keys.Kick);
+        if (m_gameManagerObj != null)
+        {
+            m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(2, 2);
+        }
     }
 
     private void OnGuardP2()
     {
         m_p2.AddKeys(Keys.Guard);
+        if (m_gameManagerObj != null)
+        {
+            m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(3, 2);
+        }
     }
 }

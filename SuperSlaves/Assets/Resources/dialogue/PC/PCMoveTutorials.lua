@@ -1,5 +1,12 @@
 PCMoveTutorials = CreateDialog(function ()
     Talk("희위쌤","첫번째 선수는 WASD키로 이동할 수 있습니다.","HwiwiT")
     Talk("희위쌤","두번째 선수는 화살표 키로 이동할 수 있습니다.","HwiwiT")
-    Talk("희위쌤","여러번 듣는 것 보다 한 번 해보는 게 더 도움이 될 수 있다...","HwiwiT")
+    Talk("희위쌤","위로 향하는 키는 점프를 할 수 있고,","HwiwiT")
+    Talk("희위쌤","아래로 향하는 키로 수그릴 수 있다...,","HwiwiT")
+end)
+
+NoriBoxMoveTutorials = CreateDialog(function ()
+    Talk("희위쌤","양측 선수는 조이스틱을 움직여 이동할 수 있습니다.","HwiwiT")
+    Talk("희위쌤","스틱을 위로 올리면 점프를 할 수 있고,","HwiwiT")
+    Talk("희위쌤","스틱을 아래로 내리면 수그릴 수 있다...,","HwiwiT")
 end)
