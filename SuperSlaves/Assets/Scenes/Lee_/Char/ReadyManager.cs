@@ -43,6 +43,7 @@ public class ReadyManager : MonoBehaviour
     int p2_;
     int p2_n;
 
+    GameObject[] cha = new GameObject[10];
     GameObject Pl_1;
     GameObject Pl_2;
     public static int P1;
@@ -290,14 +291,22 @@ public class ReadyManager : MonoBehaviour
                         if (i < 5)
                         {
                             if (i != 2)
-                                Instantiate(character[i], characterPos[i], Quaternion.identity);
+                            {
+                                cha[i] = Instantiate(character[i], characterPos[i], Quaternion.identity);
+                                cha[i].transform.localScale = new Vector3(size_1, size_1);
+                            }
                         }
                         else
                         {
                             if (i != 7)
-                                Instantiate(character[i], characterPos[i], Quaternion.identity);
+                            {
+                                cha[i] = Instantiate(character[i], characterPos[i], Quaternion.identity);
+                                cha[i].transform.localScale = new Vector3(size_1, size_1);
+                            }
                         }
                     }
+                    cha[0].transform.localScale = new Vector3(size_2,size_2);
+                    cha[4].transform.localScale = new Vector3(size_2, size_2);
                     Instantiate(randomBox, new Vector3(0, -selectPos), Quaternion.identity);;
                     checkSpawn++;
                     break; //����â(ĳ���� ������)���� + ����
@@ -361,11 +370,15 @@ public class ReadyManager : MonoBehaviour
                     {
                         Pl_1.transform.DOMove(new Vector3(0, -selectPos), 0.2f);
                         Pl_1.transform.DOScale(new Vector3(1, boxSize.y + gapY + (gapY / 3) + 0.02f), 0.2f);
+                        cha[P1].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
                     }
                     else
                     {
                         Pl_1.transform.DOMove(characterPos[P1_next], 0.2f);
                         Pl_1.transform.DOScale(new Vector3(1, 1), 0.2f);
+                        if(P1 != 2 && P1 != 7)
+                            cha[P1].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
+                        cha[P1_next].transform.DOScale(new Vector3(size_2, size_2), 0.2f);
                     }
                     P1 = P1_next;
                 }
@@ -405,11 +418,15 @@ public class ReadyManager : MonoBehaviour
                     {
                         Pl_2.transform.DOMove(new Vector3(0, -selectPos), 0.2f);
                         Pl_2.transform.DOScale(new Vector3(1, boxSize.y + gapY + (gapY / 3) + 0.02f), 0.2f);
+                        cha[P2].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
                     }
                     else
                     {
                         Pl_2.transform.DOMove(characterPos[P2_next], 0.2f);
                         Pl_2.transform.DOScale(new Vector3(1, 1), 0.2f);
+                        if (P2 != 2 && P2 != 7)
+                            cha[P2].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
+                        cha[P2_next].transform.DOScale(new Vector3(size_2, size_2), 0.2f);
                     }
                     P2 = P2_next;
                 }

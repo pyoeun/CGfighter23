@@ -231,16 +231,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drowGizmo: 1
   character:
+  - {fileID: 3860684817539161064, guid: 9ddf875ff7bb6154796213cbf2ddb9ed, type: 3}
   - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
   - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
+  - {fileID: 1426719268549717564, guid: a148965f9fe909141a1f7706b625ef89, type: 3}
+  - {fileID: 4606447096192136844, guid: f127a174326da1c4fa34b64c34f1e422, type: 3}
+  - {fileID: 6391933231053257472, guid: f7cbd8a10ce4daa4081ccc29ab14f16c, type: 3}
+  - {fileID: 6391933231053257472, guid: 53bb7017aa60eed4882252c8a474e7be, type: 3}
   - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
-  - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
-  - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
-  - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
-  - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
-  - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
-  - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
-  - {fileID: 4606447096192136844, guid: 76dfc5d1bd64b0740afacc17c30990d1, type: 3}
+  - {fileID: 6391933231053257472, guid: 6b6eea84e52599d44b20d46e4de22985, type: 3}
+  - {fileID: 6391933231053257472, guid: 338bc24e27954f6439c04962a37ddc08, type: 3}
   playerBox1: {fileID: 459479600928429482, guid: 3d609ce1ca6da1c44bda08993688acde, type: 3}
   playerBox2: {fileID: 2585894121906053156, guid: 2984df3610118fb4e8d502a1666348e3, type: 3}
   aniBox: {fileID: 6376527965966574912, guid: b31af48be44b0f34794d33706b7116e4, type: 3}
