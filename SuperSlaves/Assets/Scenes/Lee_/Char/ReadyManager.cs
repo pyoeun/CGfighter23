@@ -4,6 +4,7 @@ using System.Drawing;
 using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting;
+using UnityEngine.TextCore.Text;
 
 public class ReadyManager : MonoBehaviour
 {
@@ -35,6 +36,13 @@ public class ReadyManager : MonoBehaviour
     bool spawn = false;
 
     //Ű�Է�
+    float size_1;
+    float size_2;
+    int p1_;
+    int p1_n;
+    int p2_;
+    int p2_n;
+
     GameObject Pl_1;
     GameObject Pl_2;
     public static int P1;
@@ -85,6 +93,8 @@ public class ReadyManager : MonoBehaviour
 
     void Start()
     {
+        size_1 = 1.3f;
+        size_2 = 1.5f;
         P1 = 0;
         P1_next = 0;
         P2 = 4;

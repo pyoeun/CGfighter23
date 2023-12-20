@@ -5,17 +5,13 @@ using UnityEngine;
 
 public class Main_single : MonoBehaviour
 {
-    private static Main_single instance;
+    private static Main_single instance = new Main_single();
 
+    // private constructor to avoid client applications to use constructor
     private Main_single() { }
 
     public static Main_single getInstance()
     {
-        if (instance == null)
-        {
-            instance = new Main_single();
-        }
         return instance;
     }
-
 }
