@@ -7,34 +7,34 @@ using Unity.VisualScripting;
 
 public class ReadyManager : MonoBehaviour
 {
-    //¾Ö´Ï¸ÞÀÌ¼Ç¿ë
+    //ï¿½Ö´Ï¸ï¿½ï¿½Ì¼Ç¿ï¿½
 
-    //¿ÀºêÁ§Æ® ¹Þ¾Æ¿À±â
-    [SerializeField] bool drowGizmo;                                //±âÁî¸ð µå·Î¿ì À¯/¹«
-    [SerializeField] GameObject[] character;                        //Ä³¸¯ÅÍ ¸®½ºÆ®
-    [SerializeField] GameObject playerBox1;                         //ÇÃ·¹ÀÌ¾î ¹Ú½º 1
-    [SerializeField] GameObject playerBox2;                         //ÇÃ·¹ÀÌ¾î ¹Ú½º 2
-    [SerializeField] GameObject aniBox;                             //¾Ö´Ï¸ÞÀÌ¼Ç¿ë ¹Ú½º
-    [SerializeField] GameObject randomBox;                          //·£´ý¹Ú½º
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½
+    [SerializeField] bool drowGizmo;                                //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½/ï¿½ï¿½
+    [SerializeField] GameObject[] character;                        //Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
+    [SerializeField] GameObject playerBox1;                         //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ú½ï¿½ 1
+    [SerializeField] GameObject playerBox2;                         //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ú½ï¿½ 2
+    [SerializeField] GameObject aniBox;                             //ï¿½Ö´Ï¸ï¿½ï¿½Ì¼Ç¿ï¿½ ï¿½Ú½ï¿½
+    [SerializeField] GameObject randomBox;                          //ï¿½ï¿½ï¿½ï¿½ï¿½Ú½ï¿½
     [SerializeField] UnityEngine.Color color1;
     [SerializeField] UnityEngine.Color color2;
-    //°ª ¹Þ¾Æ¿À±â
-    [SerializeField] float selectPos;                               //¼±ÅÃÃ¢ À§Ä¡
+    //ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½
+    [SerializeField] float selectPos;                               //ï¿½ï¿½ï¿½ï¿½Ã¢ ï¿½ï¿½Ä¡
     [SerializeField] float gapX;
-    [SerializeField] float gapY;                                    //Ä³¸¯ÅÍº° °£±Ø
-    [SerializeField] Vector2 boxSize;                               //¹Ú½ºÀÇ »çÀÌÁî
-    [SerializeField] float moveDelay;                               //¿òÁ÷ÀÓ µô·¹ÀÌ
-    [SerializeField] float changeDelay;                             //Ã¼ÀÎÁö µô·¹ÀÌ
-    [SerializeField] float colorDelay;                              //ÄÃ·¯ µô·¹ÀÌ
-    //ÇÔ¼ö ³»¿¡¼­¸¸ »ç¿ë
-     Vector3[] characterPos = new Vector3[10];                      //Ä³¸¯ÅÍ ¼±ÅÃÃ¢ Æ÷Áö¼Ç
-    float tempPos1, tempPos2;                                       //½ºÆùÀÇ ½ÃÀÛÁ¡
-    float time;                                                     //deltatime¿ë º¯¼ö
+    [SerializeField] float gapY;                                    //Ä³ï¿½ï¿½ï¿½Íºï¿½ ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] Vector2 boxSize;                               //ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] float moveDelay;                               //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] float changeDelay;                             //Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+    [SerializeField] float colorDelay;                              //ï¿½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+    //ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+     Vector3[] characterPos = new Vector3[10];                      //Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    float tempPos1, tempPos2;                                       //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    float time;                                                     //deltatimeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     GameObject[] tempObj = new GameObject[12];
     short checkSpawn = 0;
     bool spawn = false;
 
-    //Å°ÀÔ·Â
+    //Å°ï¿½Ô·ï¿½
     GameObject Pl_1;
     GameObject Pl_2;
     public static int P1;
@@ -135,7 +135,7 @@ public class ReadyManager : MonoBehaviour
                         time = 0.0f;
                     }
                     
-                    break; //°¡¿îµ¥_À§ + ¾Æ·¡
+                    break; //ï¿½ï¿½ï¿½îµ¥_ï¿½ï¿½ + ï¿½Æ·ï¿½
                 case 1:
                     time += Time.deltaTime;
                     if(time> changeDelay)
@@ -159,7 +159,7 @@ public class ReadyManager : MonoBehaviour
                         checkSpawn++;
                         time = 0.0f;
                     }
-                    break; //Ã¹¹øÂ° °¥¶óÁü
+                    break; //Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 case 2:
                         time += Time.deltaTime;
                         if (time > changeDelay * 0.9f)
@@ -183,7 +183,7 @@ public class ReadyManager : MonoBehaviour
                             checkSpawn++;
                             time = 0.0f;
                         }
-                        break; //µÎ¹øÂ° °¥¶óÁü
+                        break; //ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 case 3:
                     time += Time.deltaTime;
                     if (time > changeDelay)
@@ -201,7 +201,7 @@ public class ReadyManager : MonoBehaviour
                         checkSpawn++;
                         time = 0.0f;
                     }
-                    break; //·£´ý¿ë ¸ðÀÌ±â
+                    break; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½
                 case 4:
                     time += Time.deltaTime;
                     if (time > changeDelay)
@@ -216,7 +216,7 @@ public class ReadyManager : MonoBehaviour
                         checkSpawn++;
                         time = 0.0f;
                     }
-                    break; //»öº¯È­ 1
+                    break; //ï¿½ï¿½ï¿½ï¿½È­ 1
                 case 5:
                     time += Time.deltaTime;
                     if (time > changeDelay * 1.2f)
@@ -228,7 +228,7 @@ public class ReadyManager : MonoBehaviour
                         checkSpawn++;
                         time = 0.0f;
                     }
-                        break; //»öº¯È­ 2
+                        break; //ï¿½ï¿½ï¿½ï¿½È­ 2
                 case 6:
                     time += Time.deltaTime;
                     if (time > changeDelay * 1.2f)
@@ -240,7 +240,7 @@ public class ReadyManager : MonoBehaviour
                         checkSpawn++;
                         time = 0.0f;
                     }
-                    break; //»öº¯È­ 3
+                    break; //ï¿½ï¿½ï¿½ï¿½È­ 3
                 case 7:
                     time += Time.deltaTime; 
                     if (time > changeDelay * 1.4f)
@@ -249,7 +249,7 @@ public class ReadyManager : MonoBehaviour
                         checkSpawn++;
                         time = 0.0f;
                     }
-                    break; //Åõ¸í»öº¯È­ 1
+                    break; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È­ 1
                 case 8:
                     time += Time.deltaTime;
                     if (time > changeDelay * 1.2f)
@@ -261,7 +261,7 @@ public class ReadyManager : MonoBehaviour
                         checkSpawn++;
                         time = 0.0f;
                     }
-                    break; //Åõ¸í»öº¯È­ 2
+                    break; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È­ 2
                 case 9:
                     time += Time.deltaTime;
                     if (time > changeDelay * 1.8f)
@@ -273,7 +273,7 @@ public class ReadyManager : MonoBehaviour
                         checkSpawn++;
                         time = 0.0f;
                     }
-                    break; //Åõ¸í»öº¯È­ 3
+                    break; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È­ 3
                 case 10:
                     for (int i = 0; i < characterPos.Length; i++)
                     {
@@ -290,7 +290,7 @@ public class ReadyManager : MonoBehaviour
                     }
                     Instantiate(randomBox, new Vector3(0, -selectPos), Quaternion.identity);;
                     checkSpawn++;
-                    break; //¼±ÅÃÃ¢(Ä³¸¯ÅÍ ÇÁ·ÎÇÊ)»ý¼º + ·£´ý
+                    break; //ï¿½ï¿½ï¿½ï¿½Ã¢(Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½
                 case 11:
                     time += Time.deltaTime;
                     if (time < 0.4f)
@@ -300,7 +300,7 @@ public class ReadyManager : MonoBehaviour
                         time = 0.0f;
                         checkSpawn++;
                     }
-                        break; //¼±ÅÃ¿ë ¹Ú½º »ý¼º
+                        break; //ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 case 12:
                     time += Time.deltaTime;
                     if (time > 0.6f)
@@ -311,28 +311,28 @@ public class ReadyManager : MonoBehaviour
                         }
                         spawn = true;
                     }
-                    break; //»öº¯È­¿ë ¿ÀºêÁ§Æ® »èÁ¦
+                    break; //ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
             }
         } //
         else
         {
             //Player1
             {
-                if (Input.GetKeyDown(KeyCode.W)) //À§ 
+                if (Input.GetKeyDown(KeyCode.W)) //ï¿½ï¿½ 
                 {
                     if (P1 - 5 < 0)
                         StartCoroutine(ShakeP1_V());
                     else
                         P1_next = P1 - 5;
                 }
-                if (Input.GetKeyDown(KeyCode.S)) //¾Æ
+                if (Input.GetKeyDown(KeyCode.S)) //ï¿½ï¿½
                 {
                     if (P1 + 5 >= 10)
                         StartCoroutine(ShakeP1_V());
                     else
                         P1_next = P1 + 5;
                 }
-                if (Input.GetKeyDown(KeyCode.A)) //¿Þ
+                if (Input.GetKeyDown(KeyCode.A)) //ï¿½ï¿½
                 {
                     if (P1 - 1 < 0)
                         P1_next = 9;
@@ -340,7 +340,7 @@ public class ReadyManager : MonoBehaviour
                         P1_next = P1 - 1;
 
                 }
-                if (Input.GetKeyDown(KeyCode.D)) //¿À
+                if (Input.GetKeyDown(KeyCode.D)) //ï¿½ï¿½
                 {
                     P1_next = (P1 + 1) % 10;
                 }
@@ -362,21 +362,21 @@ public class ReadyManager : MonoBehaviour
             }
             //Player2
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow)) //À§ 
+                if (Input.GetKeyDown(KeyCode.UpArrow)) //ï¿½ï¿½ 
                 {
                     if (P2 - 5 < 0)
                         StartCoroutine(ShakeP2_V());
                     else
                         P2_next = P2 - 5;
                 }
-                if (Input.GetKeyDown(KeyCode.DownArrow)) //¾Æ
+                if (Input.GetKeyDown(KeyCode.DownArrow)) //ï¿½ï¿½
                 {
                     if (P2 + 5 >= 10)
                         StartCoroutine(ShakeP2_V());
                     else
                         P2_next = P2 + 5;
                 }
-                if (Input.GetKeyDown(KeyCode.LeftArrow)) //¿Þ
+                if (Input.GetKeyDown(KeyCode.LeftArrow)) //ï¿½ï¿½
                 {
                     if (P2 - 1 < 0)
                         P2_next = 9;
@@ -384,7 +384,7 @@ public class ReadyManager : MonoBehaviour
                         P2_next = P2 - 1;
 
                 }
-                if (Input.GetKeyDown(KeyCode.RightArrow)) //¿À
+                if (Input.GetKeyDown(KeyCode.RightArrow)) //ï¿½ï¿½
                 {
                     P2_next = (P2 + 1) % 10;
                 }
