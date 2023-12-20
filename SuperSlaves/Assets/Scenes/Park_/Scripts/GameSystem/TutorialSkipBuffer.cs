@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class TutorialSkipBuffer : MonoBehaviour
 {
@@ -67,6 +68,7 @@ public class TutorialSkipBuffer : MonoBehaviour
         {
             //캐릭터 선택씬 이동
             Debug.Log("SkipTutorial");
+            SceneManager.LoadScene("Ready");
         }
 
         m_pressedKeys.Clear();
