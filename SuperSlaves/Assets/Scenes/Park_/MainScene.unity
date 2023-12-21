@@ -2447,7 +2447,7 @@ MonoBehaviour:
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
   <JumpPower>k__BackingField: 25
-  <MoveSpeed>k__BackingField: 1
+  <MoveSpeed>k__BackingField: 4.5
 --- !u!50 &1079768315
 Rigidbody2D:
   serializedVersion: 4
@@ -3407,7 +3407,7 @@ MonoBehaviour:
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
   <JumpPower>k__BackingField: 25
-  <MoveSpeed>k__BackingField: 1
+  <MoveSpeed>k__BackingField: 4.5
 --- !u!50 &1713849388
 Rigidbody2D:
   serializedVersion: 4

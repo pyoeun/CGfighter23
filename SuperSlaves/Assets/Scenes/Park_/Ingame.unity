@@ -270,6 +270,7 @@ MonoBehaviour:
   m_p1: {fileID: 1079768314}
   m_p2: {fileID: 1713849387}
   m_ingameManager: {fileID: 1780563559}
+  m_gameManagerObj: {fileID: 0}
 --- !u!114 &268343232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2088,7 +2089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7cb40f1b1f37a14c81b75c1b6cda5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_textForTest: {fileID: 622710610}
   m_playerName: P1
   m_playerType: 10
   m_skillCooltime: 5
@@ -2096,7 +2096,7 @@ MonoBehaviour:
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
   <JumpPower>k__BackingField: 25
-  <MoveSpeed>k__BackingField: 1
+  <MoveSpeed>k__BackingField: 4.5
 --- !u!50 &1079768315
 Rigidbody2D:
   serializedVersion: 4
@@ -2133,6 +2133,7 @@ MonoBehaviour:
   MaxLife: 100
   CurrentLife: 0
   m_lifeSlider: {fileID: 619413803}
+  m_gameManagerObj: {fileID: 0}
   m_isP1: 1
 --- !u!58 &1079768318
 CircleCollider2D:
@@ -2757,7 +2758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7cb40f1b1f37a14c81b75c1b6cda5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_textForTest: {fileID: 452980094}
   m_playerName: P2
   m_playerType: 10
   m_skillCooltime: 5
@@ -2765,7 +2765,7 @@ MonoBehaviour:
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
   <JumpPower>k__BackingField: 25
-  <MoveSpeed>k__BackingField: 1
+  <MoveSpeed>k__BackingField: 4.5
 --- !u!50 &1713849388
 Rigidbody2D:
   serializedVersion: 4
@@ -2802,6 +2802,7 @@ MonoBehaviour:
   MaxLife: 100
   CurrentLife: 0
   m_lifeSlider: {fileID: 1001841739}
+  m_gameManagerObj: {fileID: 0}
   m_isP1: 0
 --- !u!58 &1713849391
 CircleCollider2D:
