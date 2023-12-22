@@ -434,6 +434,39 @@ public class ReadyManager : MonoBehaviour
         }
         
     }
+
+    void P1_InputUp()
+    {
+
+    }
+    void P1_InputDown()
+    {
+
+    }
+    void P1_InputLeft()
+    {
+
+    }
+    void P1_InputRight()
+    {
+
+    }
+    void P2_InputUp()
+    {
+
+    }
+    void P2_InputDown()
+    {
+
+    }
+    void P2_InputLeft()
+    {
+
+    }
+    void P2_InputRight()
+    {
+
+    }
     IEnumerator ShakeP1_V()
     {
         float shakeTime = 0.0f;
