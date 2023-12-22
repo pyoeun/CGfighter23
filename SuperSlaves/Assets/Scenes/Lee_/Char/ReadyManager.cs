@@ -39,10 +39,6 @@ public class ReadyManager : MonoBehaviour
     //Ű�Է�
     float size_1;
     float size_2;
-    int p1_;
-    int p1_n;
-    int p2_;
-    int p2_n;
 
     GameObject[] cha = new GameObject[10];
     GameObject Pl_1;
@@ -51,6 +47,9 @@ public class ReadyManager : MonoBehaviour
     public static int P2;
     int P1_next;
     int P2_next;
+
+    bool Play1;
+    bool Play2;
 
     [SerializeField] float shakeAmount;
 
@@ -95,6 +94,8 @@ public class ReadyManager : MonoBehaviour
 
     void Start()
     {
+        Play1 = false;
+        Play2 = false;
         size_1 = 1.3f;
         size_2 = 1.5f;
         P1 = 0;
@@ -337,24 +338,7 @@ public class ReadyManager : MonoBehaviour
         else
         {
             //Player1
-                {
-        //        if (Input.GetKeyDown(KeyCode.W)) //�� 
-        //        {
-        //            P1_InputUp();
-        //        }
-        //        if (Input.GetKeyDown(KeyCode.S)) //��
-        //        {
-        //            P1_InputDown();
-        //        }
-        //        if (Input.GetKeyDown(KeyCode.A)) //��
-        //        {
-        //            P1_InputLeft();
-        //        }
-        //        if (Input.GetKeyDown(KeyCode.D)) //��
-        //        {
-        //            P1_InputRight();
-        //        }
-
+            {
                 if (P1 != P1_next)
                 {
                     if (P1_next == 2 || P1_next == 7)
@@ -376,23 +360,6 @@ public class ReadyManager : MonoBehaviour
             }
             //Player2
             {
-                //if (Input.GetKeyDown(KeyCode.UpArrow)) //�� 
-                //{
-                //    P2_InputUp();
-                //}
-                //if (Input.GetKeyDown(KeyCode.DownArrow)) //��
-                //{
-                //    P2_InputDown();
-                //}
-                //if (Input.GetKeyDown(KeyCode.LeftArrow)) //��
-                //{
-                //    P2_InputLeft();
-                //}
-                //if (Input.GetKeyDown(KeyCode.RightArrow)) //��
-                //{
-                //    P2_InputRight();
-                //}
-
                 if (P2 != P2_next)
                 {
                     if (P2_next == 2 || P2_next == 7)
