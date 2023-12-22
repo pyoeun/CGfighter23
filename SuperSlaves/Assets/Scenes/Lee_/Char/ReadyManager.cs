@@ -337,23 +337,23 @@ public class ReadyManager : MonoBehaviour
         else
         {
             //Player1
-            {
-                if (Input.GetKeyDown(KeyCode.W)) //�� 
                 {
-                    P1_InputUp();
-                }
-                if (Input.GetKeyDown(KeyCode.S)) //��
-                {
-                    P1_InputDown();
-                }
-                if (Input.GetKeyDown(KeyCode.A)) //��
-                {
-                    P1_InputLeft();
-                }
-                if (Input.GetKeyDown(KeyCode.D)) //��
-                {
-                    P1_InputRight();
-                }
+        //        if (Input.GetKeyDown(KeyCode.W)) //�� 
+        //        {
+        //            P1_InputUp();
+        //        }
+        //        if (Input.GetKeyDown(KeyCode.S)) //��
+        //        {
+        //            P1_InputDown();
+        //        }
+        //        if (Input.GetKeyDown(KeyCode.A)) //��
+        //        {
+        //            P1_InputLeft();
+        //        }
+        //        if (Input.GetKeyDown(KeyCode.D)) //��
+        //        {
+        //            P1_InputRight();
+        //        }
 
                 if (P1 != P1_next)
                 {
@@ -376,22 +376,22 @@ public class ReadyManager : MonoBehaviour
             }
             //Player2
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow)) //�� 
-                {
-                    P2_InputUp();
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow)) //��
-                {
-                    P2_InputDown();
-                }
-                if (Input.GetKeyDown(KeyCode.LeftArrow)) //��
-                {
-                    P2_InputLeft();
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow)) //��
-                {
-                    P2_InputRight();
-                }
+                //if (Input.GetKeyDown(KeyCode.UpArrow)) //�� 
+                //{
+                //    P2_InputUp();
+                //}
+                //if (Input.GetKeyDown(KeyCode.DownArrow)) //��
+                //{
+                //    P2_InputDown();
+                //}
+                //if (Input.GetKeyDown(KeyCode.LeftArrow)) //��
+                //{
+                //    P2_InputLeft();
+                //}
+                //if (Input.GetKeyDown(KeyCode.RightArrow)) //��
+                //{
+                //    P2_InputRight();
+                //}
 
                 if (P2 != P2_next)
                 {
@@ -438,6 +438,31 @@ public class ReadyManager : MonoBehaviour
         if (inputVec.y < 0)
         {
             P1_InputDown();
+        }
+    }
+    private void OnMoveP2(InputValue value)
+    {
+        Vector2 inputVec = value.Get<Vector2>();
+
+        //Left
+        if (inputVec.x < 0)
+        {
+            P2_InputLeft();
+        }
+        //Right
+        if (inputVec.x > 0)
+        {
+            P2_InputRight();
+        }
+        //Up
+        if (inputVec.y > 0)
+        {
+            P2_InputUp();
+        }
+        //Down
+        if (inputVec.y < 0)
+        {
+            P2_InputDown();
         }
     }
 
