@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private ControlManager m_p1;
-    [SerializeField] private ControlManager m_p2;
+    public ControlManager P1 { get; set; }
+    public ControlManager P2 { get; set; }
 
     [SerializeField] private IngameManager m_ingameManager;
     [SerializeField] private GameObject m_gameManagerObj;
@@ -35,8 +35,11 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        m_p1.transform.Translate(TargetDirection(1, m_p1Direction) * m_p1.MoveSpeed * Time.deltaTime);
-        m_p2.transform.Translate(TargetDirection(2, m_p2Direction) * m_p2.MoveSpeed * Time.deltaTime);
+        if (P1 != null && P2 != null)
+        {
+            P1.transform.Translate(TargetDirection(1, m_p1Direction) * P1.MoveSpeed * Time.deltaTime);
+            P2.transform.Translate(TargetDirection(2, m_p2Direction) * P2.MoveSpeed * Time.deltaTime);
+        }
     }
 
     private Vector3 TargetDirection(int pPlayerType, Vector3 pDirection)
@@ -47,21 +50,21 @@ public class PlayerManager : MonoBehaviour
         switch (pPlayerType)
         {
             case 1:
-                if (inputVec.x < 0 && m_gameManager.Distance >= m_p1.gameObject.transform.localScale.x / 2 && m_p1.IsTouched)
+                if (inputVec.x < 0 && m_gameManager.Distance >= P1.gameObject.transform.localScale.x / 2 && P1.IsTouched)
                 {
                     inputVec.x = 0;
                 }
-                else if (inputVec.x > 0 && m_gameManager.Distance <= m_p1.gameObject.transform.localScale.x / 2 && m_p1.IsTouched)
+                else if (inputVec.x > 0 && m_gameManager.Distance <= P1.gameObject.transform.localScale.x / 2 && P1.IsTouched)
                 {
                     inputVec.x = 0;
                 }
                 break;
             case 2:
-                if (inputVec.x < 0 && m_gameManager.Distance <= m_p2.gameObject.transform.localScale.x / 2 && m_p2.IsTouched)
+                if (inputVec.x < 0 && m_gameManager.Distance <= P2.gameObject.transform.localScale.x / 2 && P2.IsTouched)
                 {
                     inputVec.x = 0;
                 }
-                else if (inputVec.x > 0 && m_gameManager.Distance >= m_p2.gameObject.transform.localScale.x / 2 && m_p2.IsTouched)
+                else if (inputVec.x > 0 && m_gameManager.Distance >= P2.gameObject.transform.localScale.x / 2 && P2.IsTouched)
                 {
                     inputVec.x = 0;
                 }
@@ -81,7 +84,7 @@ public class PlayerManager : MonoBehaviour
         //Left
         if (inputVec.x < 0)
         {
-            m_p1.AddKeys(Keys.Left);
+            P1.AddKeys(Keys.Left);
             //if(!m_p1.IsTouched || m_gameManager.Distance < m_p1.gameObject.transform.localScale.x / 2)
             //{
             //    m_p1.transform.Translate(Vector3.left * m_p1.MoveSpeed);
@@ -90,7 +93,7 @@ public class PlayerManager : MonoBehaviour
         //Right
         if (inputVec.x > 0)
         {
-            m_p1.AddKeys(Keys.Right);
+            P1.AddKeys(Keys.Right);
             //if(!m_p1.IsTouched || m_gameManager.Distance > m_p1.gameObject.transform.localScale.x / 2)
             //{
             //    m_p1.transform.Translate(Vector3.right * m_p1.MoveSpeed);
@@ -99,13 +102,13 @@ public class PlayerManager : MonoBehaviour
         //Up
         if (inputVec.y > 0)
         {
-            m_p1.AddKeys(Keys.Up);
-            m_p1.GetComponent<PlayerController>().Jump();
+            P1.AddKeys(Keys.Up);
+            P1.GetComponent<PlayerController>().Jump();
         }
         //Down
         if (inputVec.y < 0)
         {
-            m_p1.AddKeys(Keys.Down);
+            P1.AddKeys(Keys.Down);
         }
 
         if(m_gameManagerObj != null)
@@ -118,7 +121,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnPunchP1()
     {
-        m_p1.AddKeys(Keys.Punch);
+        P1.AddKeys(Keys.Punch);
         if (m_gameManagerObj != null)
         {
             m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(1, 1);
@@ -127,7 +130,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnKickP1()
     {
-        m_p1.AddKeys(Keys.Kick);
+        P1.AddKeys(Keys.Kick);
         if (m_gameManagerObj != null)
         {
             m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(2, 1);
@@ -136,7 +139,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnGuardP1()
     {
-        m_p1.AddKeys(Keys.Guard);
+        P1.AddKeys(Keys.Guard);
         if (m_gameManagerObj != null)
         {
             m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(3, 1);
@@ -150,7 +153,7 @@ public class PlayerManager : MonoBehaviour
         //Left
         if (inputVec.x < 0)
         {
-            m_p2.AddKeys(Keys.Left);
+            P2.AddKeys(Keys.Left);
             //if ((!m_p2.IsTouched || m_gameManager.Distance > m_p2.gameObject.transform.localScale.x / 2))
             //{
             //    m_p2.transform.Translate(Vector3.left * m_p2.MoveSpeed);
@@ -159,7 +162,7 @@ public class PlayerManager : MonoBehaviour
         //Right
         if (inputVec.x > 0)
         {
-            m_p2.AddKeys(Keys.Right);
+            P2.AddKeys(Keys.Right);
             //if (!m_p2.IsTouched || m_gameManager.Distance < m_p2.gameObject.transform.localScale.x / 2)
             //{
             //    m_p2.transform.Translate(Vector3.right * m_p2.MoveSpeed);
@@ -168,13 +171,13 @@ public class PlayerManager : MonoBehaviour
         //Up
         if (inputVec.y > 0)
         {
-            m_p2.AddKeys(Keys.Up);
-            m_p2.GetComponent<PlayerController>().Jump();
+            P2.AddKeys(Keys.Up);
+            P2.GetComponent<PlayerController>().Jump();
         }
         //Down
         if (inputVec.y < 0)
         {
-            m_p2.AddKeys(Keys.Down);
+            P2.AddKeys(Keys.Down);
         }
 
         if (m_gameManagerObj != null)
@@ -187,7 +190,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnPunchP2()
     {
-        m_p2.AddKeys(Keys.Punch);
+        P2.AddKeys(Keys.Punch);
         if (m_gameManagerObj != null)
         {
             m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(1, 2);
@@ -196,7 +199,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnKickP2()
     {
-        m_p2.AddKeys(Keys.Kick);
+        P2.AddKeys(Keys.Kick);
         if (m_gameManagerObj != null)
         {
             m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(2, 2);
@@ -205,7 +208,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnGuardP2()
     {
-        m_p2.AddKeys(Keys.Guard);
+        P2.AddKeys(Keys.Guard);
         if (m_gameManagerObj != null)
         {
             m_gameManagerObj.GetComponent<TutorialGameManager>().SettingTutorialProgress(3, 2);

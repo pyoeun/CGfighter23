@@ -10,7 +10,7 @@ using Unity.VisualScripting;
 public class ControlManager : MonoBehaviour
 {
     [SerializeField] private String m_playerName;
-    [SerializeField] private PlayerTypes m_playerType;
+    [field : SerializeField] public PlayerTypes m_playerType { get; private set; }
     [SerializeField] private float m_skillCooltime;
     [SerializeField] private Slider m_skillSlider;
 
@@ -41,6 +41,11 @@ public class ControlManager : MonoBehaviour
 
         IsTouched = false;
         m_skillTimer = m_skillCooltime;
+    }
+
+    private void OnEnable()
+    {
+        m_skillSlider = GameObject.Find($"{m_playerName}CoolTime").GetComponent<Slider>();
     }
 
     private void Update()

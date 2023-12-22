@@ -49,7 +49,7 @@ public class Movement : ScriptableObject
 
     public bool IsTryingCombo(List<Keys> pPlayerKeyCodes)
     {
-        for(int i = 0; i < pPlayerKeyCodes.Count; i++)
+        for(int i = 0; i < pPlayerKeyCodes.Count && i < m_moveKeyCodes.Count; i++)
         {
             if (pPlayerKeyCodes[i] != m_moveKeyCodes[i])
             {

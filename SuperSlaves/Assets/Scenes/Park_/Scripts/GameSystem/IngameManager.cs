@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class IngameManager : MonoBehaviour, IGameManager
 {
-    [SerializeField] private GameObject m_player1;
-    [SerializeField] private GameObject m_player2;
+    public GameObject Player1 { get; set; }
+    public GameObject Player2 { get; set; }
 
     [SerializeField] private TextMeshProUGUI m_IngameTimer;
 
@@ -38,17 +38,17 @@ public class IngameManager : MonoBehaviour, IGameManager
 
     public void UpdateDistance()
     {
-        Distance = m_player2.transform.position.x - m_player1.transform.position.x;
+        Distance = Player2.transform.position.x - Player1.transform.position.x;
         if (Distance * Sign < 0)
         {
             Sign *= -1;
-            var scaleP1 = m_player1.transform.localScale;
+            var scaleP1 = Player1.transform.localScale;
             scaleP1.x *= -1;
-            m_player1.transform.localScale = scaleP1;
+            Player1.transform.localScale = scaleP1;
 
-            var scaleP2 = m_player2.transform.localScale;
+            var scaleP2 = Player2.transform.localScale;
             scaleP2.x *= -1;
-            m_player2.transform.localScale = scaleP2;
+            Player2.transform.localScale = scaleP2;
         }
     }
 
@@ -80,8 +80,8 @@ public class IngameManager : MonoBehaviour, IGameManager
     {
         Time.timeScale = 0;
 
-        var p1Life = m_player1.GetComponent<PlayerLife>().LifeRate;
-        var p2Life = m_player2.GetComponent<PlayerLife>().LifeRate;
+        var p1Life = Player1.GetComponent<PlayerLife>().LifeRate;
+        var p2Life = Player2.GetComponent<PlayerLife>().LifeRate;
 
         if(p1Life > p2Life)
         {
