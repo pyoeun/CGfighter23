@@ -5,6 +5,7 @@ using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine.TextCore.Text;
+using UnityEngine.InputSystem;
 
 public class ReadyManager : MonoBehaviour
 {
@@ -339,29 +340,19 @@ public class ReadyManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.W)) //�� 
                 {
-                    if (P1 - 5 < 0)
-                        StartCoroutine(ShakeP1_V());
-                    else
-                        P1_next = P1 - 5;
+                    P1_InputUp();
                 }
                 if (Input.GetKeyDown(KeyCode.S)) //��
                 {
-                    if (P1 + 5 >= 10)
-                        StartCoroutine(ShakeP1_V());
-                    else
-                        P1_next = P1 + 5;
+                    P1_InputDown();
                 }
                 if (Input.GetKeyDown(KeyCode.A)) //��
                 {
-                    if (P1 - 1 < 0)
-                        P1_next = 9;
-                    else
-                        P1_next = P1 - 1;
-
+                    P1_InputLeft();
                 }
                 if (Input.GetKeyDown(KeyCode.D)) //��
                 {
-                    P1_next = (P1 + 1) % 10;
+                    P1_InputRight();
                 }
 
                 if (P1 != P1_next)
@@ -387,29 +378,19 @@ public class ReadyManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow)) //�� 
                 {
-                    if (P2 - 5 < 0)
-                        StartCoroutine(ShakeP2_V());
-                    else
-                        P2_next = P2 - 5;
+                    P2_InputUp();
                 }
                 if (Input.GetKeyDown(KeyCode.DownArrow)) //��
                 {
-                    if (P2 + 5 >= 10)
-                        StartCoroutine(ShakeP2_V());
-                    else
-                        P2_next = P2 + 5;
+                    P2_InputDown();
                 }
                 if (Input.GetKeyDown(KeyCode.LeftArrow)) //��
                 {
-                    if (P2 - 1 < 0)
-                        P2_next = 9;
-                    else
-                        P2_next = P2 - 1;
-
+                    P2_InputLeft();
                 }
                 if (Input.GetKeyDown(KeyCode.RightArrow)) //��
                 {
-                    P2_next = (P2 + 1) % 10;
+                    P2_InputRight();
                 }
 
                 if (P2 != P2_next)
@@ -434,38 +415,85 @@ public class ReadyManager : MonoBehaviour
         }
         
     }
+    private void OnMoveP1(InputValue value)
+    {
+        Vector2 inputVec = value.Get<Vector2>();
 
+        //Left
+        if (inputVec.x < 0)
+        {
+            P1_InputLeft();
+        }
+        //Right
+        if (inputVec.x > 0)
+        {
+            P1_InputRight();
+        }
+        //Up
+        if (inputVec.y > 0)
+        {
+            P1_InputUp();
+        }
+        //Down
+        if (inputVec.y < 0)
+        {
+            P1_InputDown();
+        }
+    }
+
+    private void OnPunchP1()
+    {
+       
+    }
     void P1_InputUp()
     {
-
+        if (P1 - 5 < 0)
+            StartCoroutine(ShakeP1_V());
+        else
+            P1_next = P1 - 5;
     }
     void P1_InputDown()
     {
-
+        if (P1 + 5 >= 10)
+            StartCoroutine(ShakeP1_V());
+        else
+            P1_next = P1 + 5;
     }
     void P1_InputLeft()
     {
-
+        if (P1 - 1 < 0)
+            P1_next = 9;
+        else
+            P1_next = P1 - 1;
     }
     void P1_InputRight()
     {
-
+        P1_next = (P1 + 1) % 10;
     }
     void P2_InputUp()
     {
-
+        if (P2 - 5 < 0)
+            StartCoroutine(ShakeP2_V());
+        else
+            P2_next = P2 - 5;
     }
     void P2_InputDown()
     {
-
+        if (P2 + 5 >= 10)
+            StartCoroutine(ShakeP2_V());
+        else
+            P2_next = P2 + 5;
     }
     void P2_InputLeft()
     {
-
+        if (P2 - 1 < 0)
+            P2_next = 9;
+        else
+            P2_next = P2 - 1;
     }
     void P2_InputRight()
     {
-
+        P2_next = (P2 + 1) % 10;
     }
     IEnumerator ShakeP1_V()
     {
