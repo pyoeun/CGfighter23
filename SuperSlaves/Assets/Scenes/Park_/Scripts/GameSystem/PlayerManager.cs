@@ -70,7 +70,7 @@ public class PlayerManager : MonoBehaviour
                 }
                 break;
             default:
-                Debug.LogError("±×·²¸®°¡ ¾ø´Ù");
+                Debug.LogError("ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
                 break;
         }
         return inputVec;
