@@ -10,7 +10,7 @@ using Unity.VisualScripting;
 public class ControlManager : MonoBehaviour
 {
     [SerializeField] private String m_playerName;
-    [field : SerializeField] public PlayerTypes m_playerType { get; private set; }
+    [field : SerializeField] public PlayerTypes PlayerType { get; private set; }
     [SerializeField] private float m_skillCooltime;
     [SerializeField] private Slider m_skillSlider;
 
@@ -64,7 +64,7 @@ public class ControlManager : MonoBehaviour
     public void AddKeys(Keys key)
     {
         PressedKeys.Add(key);
-        if (m_movementManager.isTryingCombo(PressedKeys, m_playerType))
+        if (m_movementManager.isTryingCombo(PressedKeys, PlayerType))
         {
             SetComboTimer();
         }

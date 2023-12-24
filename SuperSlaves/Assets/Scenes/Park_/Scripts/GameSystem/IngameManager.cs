@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IngameManager : MonoBehaviour, IGameManager
 {
@@ -131,7 +132,7 @@ public class IngameManager : MonoBehaviour, IGameManager
 
     public void GameOver()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
         var p1Life = Player1.GetComponent<PlayerLife>().LifeRate;
         var p2Life = Player2.GetComponent<PlayerLife>().LifeRate;
@@ -140,16 +141,25 @@ public class IngameManager : MonoBehaviour, IGameManager
         {
             //player1 won!
             Debug.Log("Winner is... P1!");
+            Main_single.Win = 0;
         }
         else if(p1Life < p2Life)
         {
             //player2 won!
             Debug.Log("Winner is... P2!");
+            Main_single.Win = 1;
         }
         else
         {
             //draw...!
             Debug.Log("Draw!");
+            Main_single.Win = 2;
         }
+        Invoke("ShowEnding", 1.5f);
+    }
+
+    private void ShowEnding()
+    {
+        SceneManager.LoadScene("EndingScene");
     }
 }

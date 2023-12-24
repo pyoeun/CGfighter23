@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerName: P2
-  <m_playerType>k__BackingField: 3
+  <PlayerType>k__BackingField: 3
   m_skillCooltime: 5
   m_skillSlider: {fileID: 0}
   <PressedKeys>k__BackingField: 
