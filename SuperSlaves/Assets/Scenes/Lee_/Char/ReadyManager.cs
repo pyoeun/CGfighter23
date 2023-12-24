@@ -337,46 +337,56 @@ public class ReadyManager : MonoBehaviour
         }
         else
         {
+            if (Input.GetKey(KeyCode.Q))
+                OnPunchP1();
+            if (Input.GetKey(KeyCode.Slash))
+                OnPunchP2();
             //Player1
             {
-                if (P1 != P1_next)
+                if (!Play1)
                 {
-                    if (P1_next == 2 || P1_next == 7)
+                    if (P1 != P1_next)
                     {
-                        Pl_1.transform.DOMove(new Vector3(0, -selectPos), 0.2f);
-                        Pl_1.transform.DOScale(new Vector3(1, boxSize.y + gapY + (gapY / 3) + 0.02f), 0.2f);
-                        cha[P1].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
-                    }
-                    else
-                    {
-                        Pl_1.transform.DOMove(characterPos[P1_next], 0.2f);
-                        Pl_1.transform.DOScale(new Vector3(1, 1), 0.2f);
-                        if(P1 != 2 && P1 != 7)
+                        if (P1_next == 2 || P1_next == 7)
+                        {
+                            Pl_1.transform.DOMove(new Vector3(0, -selectPos), 0.2f);
+                            Pl_1.transform.DOScale(new Vector3(1, boxSize.y + gapY + (gapY / 3) + 0.02f), 0.2f);
                             cha[P1].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
-                        cha[P1_next].transform.DOScale(new Vector3(size_2, size_2), 0.2f);
+                        }
+                        else
+                        {
+                            Pl_1.transform.DOMove(characterPos[P1_next], 0.2f);
+                            Pl_1.transform.DOScale(new Vector3(1, 1), 0.2f);
+                            if (P1 != 2 && P1 != 7)
+                                cha[P1].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
+                            cha[P1_next].transform.DOScale(new Vector3(size_2, size_2), 0.2f);
+                        }
+                        P1 = P1_next;
                     }
-                    P1 = P1_next;
                 }
             }
             //Player2
             {
-                if (P2 != P2_next)
+                if (!Play2)
                 {
-                    if (P2_next == 2 || P2_next == 7)
+                    if (P2 != P2_next)
                     {
-                        Pl_2.transform.DOMove(new Vector3(0, -selectPos), 0.2f);
-                        Pl_2.transform.DOScale(new Vector3(1, boxSize.y + gapY + (gapY / 3) + 0.02f), 0.2f);
-                        cha[P2].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
-                    }
-                    else
-                    {
-                        Pl_2.transform.DOMove(characterPos[P2_next], 0.2f);
-                        Pl_2.transform.DOScale(new Vector3(1, 1), 0.2f);
-                        if (P2 != 2 && P2 != 7)
+                        if (P2_next == 2 || P2_next == 7)
+                        {
+                            Pl_2.transform.DOMove(new Vector3(0, -selectPos), 0.2f);
+                            Pl_2.transform.DOScale(new Vector3(1, boxSize.y + gapY + (gapY / 3) + 0.02f), 0.2f);
                             cha[P2].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
-                        cha[P2_next].transform.DOScale(new Vector3(size_2, size_2), 0.2f);
+                        }
+                        else
+                        {
+                            Pl_2.transform.DOMove(characterPos[P2_next], 0.2f);
+                            Pl_2.transform.DOScale(new Vector3(1, 1), 0.2f);
+                            if (P2 != 2 && P2 != 7)
+                                cha[P2].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
+                            cha[P2_next].transform.DOScale(new Vector3(size_2, size_2), 0.2f);
+                        }
+                        P2 = P2_next;
                     }
-                    P2 = P2_next;
                 }
             }
         }

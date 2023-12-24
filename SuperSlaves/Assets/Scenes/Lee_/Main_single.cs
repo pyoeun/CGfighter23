@@ -26,12 +26,14 @@ public class Main_single : MonoBehaviour
     {
         switch(sceneNum)
         {
+            //Ready
             case 1:
                 {
                     
     
                 }
                 break;
+            //Fight
             case 2:
                 break;
         }
@@ -40,12 +42,21 @@ public class Main_single : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Main")
+        if(collision.collider.gameObject.name == "Main")
+        {
             sceneNum = 0;
-        if (collision.collider.tag == "Ready")
+            Debug.Log("Main");
+        }
+        if (collision.collider.gameObject.name == "Ready")
+        {
             sceneNum = 1;
-        if (collision.collider.tag == "InGame")
+            Debug.Log("Ready");
+        }
+        if (collision.collider.gameObject.name == "InGame")
+        {
             sceneNum = 2;
+            Debug.Log("InGame");
+        }
     }
 
     public static void characterChoose_P1(int P1)   
