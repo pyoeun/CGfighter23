@@ -50,27 +50,31 @@ public class PlayerManager : MonoBehaviour
         switch (pPlayerType)
         {
             case 1:
-                if (inputVec.x < 0 && m_gameManager.Distance >= P1.gameObject.transform.localScale.x / 2 && P1.IsTouched)
+                if ((inputVec.x < 0 && m_gameManager.Distance >= P1.gameObject.transform.localScale.x / 2 && P1.IsTouched)
+                    || (m_gameManager.Distance > 0 && !m_gameManager.IsAbletoMove(1)))
                 {
                     inputVec.x = 0;
                 }
-                else if (inputVec.x > 0 && m_gameManager.Distance <= P1.gameObject.transform.localScale.x / 2 && P1.IsTouched)
+                else if ((inputVec.x > 0 && m_gameManager.Distance <= P1.gameObject.transform.localScale.x / 2 && P1.IsTouched)
+                    || (m_gameManager.Distance < 0 && !m_gameManager.IsAbletoMove(1)))
                 {
                     inputVec.x = 0;
                 }
                 break;
             case 2:
-                if (inputVec.x < 0 && m_gameManager.Distance <= P2.gameObject.transform.localScale.x / 2 && P2.IsTouched)
+                if ((inputVec.x < 0 && m_gameManager.Distance <= P2.gameObject.transform.localScale.x / 2 && P2.IsTouched)
+                    || (m_gameManager.Distance < 0 && !m_gameManager.IsAbletoMove(2)))
                 {
                     inputVec.x = 0;
                 }
-                else if (inputVec.x > 0 && m_gameManager.Distance >= P2.gameObject.transform.localScale.x / 2 && P2.IsTouched)
+                else if ((inputVec.x > 0 && m_gameManager.Distance >= P2.gameObject.transform.localScale.x / 2 && P2.IsTouched)
+                    || (m_gameManager.Distance > 0 && !m_gameManager.IsAbletoMove(2)))
                 {
                     inputVec.x = 0;
                 }
                 break;
             default:
-                Debug.LogError("�׷����� ����");
+                Debug.LogError("그럴리가 없다.");
                 break;
         }
         return inputVec;
@@ -85,19 +89,11 @@ public class PlayerManager : MonoBehaviour
         if (inputVec.x < 0)
         {
             P1.AddKeys(Keys.Left);
-            //if(!m_p1.IsTouched || m_gameManager.Distance < m_p1.gameObject.transform.localScale.x / 2)
-            //{
-            //    m_p1.transform.Translate(Vector3.left * m_p1.MoveSpeed);
-            //}
         }
         //Right
         if (inputVec.x > 0)
         {
             P1.AddKeys(Keys.Right);
-            //if(!m_p1.IsTouched || m_gameManager.Distance > m_p1.gameObject.transform.localScale.x / 2)
-            //{
-            //    m_p1.transform.Translate(Vector3.right * m_p1.MoveSpeed);
-            //}
         }
         //Up
         if (inputVec.y > 0)
@@ -154,19 +150,11 @@ public class PlayerManager : MonoBehaviour
         if (inputVec.x < 0)
         {
             P2.AddKeys(Keys.Left);
-            //if ((!m_p2.IsTouched || m_gameManager.Distance > m_p2.gameObject.transform.localScale.x / 2))
-            //{
-            //    m_p2.transform.Translate(Vector3.left * m_p2.MoveSpeed);
-            //}
         }
         //Right
         if (inputVec.x > 0)
         {
             P2.AddKeys(Keys.Right);
-            //if (!m_p2.IsTouched || m_gameManager.Distance < m_p2.gameObject.transform.localScale.x / 2)
-            //{
-            //    m_p2.transform.Translate(Vector3.right * m_p2.MoveSpeed);
-            //}
         }
         //Up
         if (inputVec.y > 0)

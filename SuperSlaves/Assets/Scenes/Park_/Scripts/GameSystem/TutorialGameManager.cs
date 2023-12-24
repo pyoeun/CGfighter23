@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class TutorialGameManager : MonoBehaviour, IGameManager
 {
@@ -19,6 +20,10 @@ public class TutorialGameManager : MonoBehaviour, IGameManager
     public Boolean[] IsPlayingTutorial { get; private set; }
     public Boolean[] IsReady { get; private set; }
 
+    private Camera m_cam;
+    private float m_minCamPos = -9.11f;
+    private float m_maxCamPos = 9.11f;
+
     //private float m_maxPlayTime = 60f;
     //private float m_ingameTime;
 
@@ -27,6 +32,7 @@ public class TutorialGameManager : MonoBehaviour, IGameManager
 
     private void Awake()
     {
+        m_cam = Camera.main;
         IsPlayingTutorial = new Boolean[System.Enum.GetValues(typeof(TutorialSeq)).Length];
         IsReady = new Boolean[System.Enum.GetValues(typeof(TutorialSeq)).Length];
         for (int i = 0; i < System.Enum.GetValues(typeof(TutorialSeq)).Length; i++)
@@ -47,6 +53,55 @@ public class TutorialGameManager : MonoBehaviour, IGameManager
     private void Update()
     {
         UpdateDistance();
+        UpdateCamera();
+    }
+
+    public bool IsAbletoMove(int pPlayerType)
+    {
+        Vector3 pos1 = m_cam.WorldToViewportPoint(m_player1.transform.position);
+        Vector3 pos2 = m_cam.WorldToViewportPoint(m_player2.transform.position);
+
+        switch (pPlayerType)
+        {
+            case 1:
+                if ((pos1.x < 0f && pos2.x >= 1f) || (pos1.x > 1f && pos2.x <= 0))
+                {
+                    Vector3 temp1 = new Vector3(Mathf.Clamp(pos1.x, 0, 1), pos1.y, pos1.z);
+                    m_player1.transform.position = m_cam.ViewportToWorldPoint(temp1);
+
+                    return false;
+                }
+                else if ((pos1.x <= 0f && m_cam.transform.position.x <= m_minCamPos) || (pos1.x >= 1f && m_cam.transform.position.x >= m_maxCamPos))
+                {
+                    return false;
+                }
+                return true;
+            case 2:
+                if ((pos1.x <= 0f && pos2.x > 1f) || (pos1.x >= 1f && pos2.x < 0))
+                {
+                    Vector3 temp2 = new Vector3(Mathf.Clamp(pos2.x, 0, 1), pos2.y, pos2.z);
+                    m_player2.transform.position = m_cam.ViewportToWorldPoint(temp2);
+
+                    return false;
+                }
+                else if ((pos2.x <= 0f && m_cam.transform.position.x <= m_minCamPos) || (pos2.x >= 1f && m_cam.transform.position.x >= m_maxCamPos))
+                {
+                    return false;
+                }
+                return true;
+            default:
+                Debug.LogError("그럴리가없다");
+                return false;
+        }
+    }
+
+    public void UpdateCamera()
+    {
+        if (IsAbletoMove(1) && IsAbletoMove(2))
+        {
+            m_cam.transform.position = new Vector3(Mathf.Clamp((m_player1.transform.position.x + m_player2.transform.position.x) / 2
+                                                    , m_minCamPos, m_maxCamPos), 0, -10);
+        }
     }
 
     public void UpdateDistance()

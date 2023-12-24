@@ -9,4 +9,6 @@ public interface IGameManager
     public void Defense(Vector3 pPos);
     public void UpdateDistance();
     public void UpdateTimer();
+    public void UpdateCamera();
+    public bool IsAbletoMove(int pPlayerType);
 }
