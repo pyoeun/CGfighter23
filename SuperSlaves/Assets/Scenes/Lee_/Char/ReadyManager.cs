@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine.TextCore.Text;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ReadyManager : MonoBehaviour
 {
@@ -404,6 +405,8 @@ public class ReadyManager : MonoBehaviour
             {
                 if (aaa == false)
                 {
+                    Pl_1.transform.DOMove(characterPos[Main_single.Player1_], 0.2f);
+                    Pl_2.transform.DOMove(characterPos[Main_single.Player2_], 0.2f);
                     OnPunchP1();
                     OnPunchP2();
                     Invoke("InGameLode", 3f);
@@ -557,6 +560,6 @@ public class ReadyManager : MonoBehaviour
     }
     private void InGameLode()
     {
-        Debug.Log("신변경");
+        SceneManager.LoadScene("Ingame");
     }
 }

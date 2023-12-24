@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,18 +10,26 @@ public class Main_single : MonoBehaviour
     private static Main_single instance;
 
     //InGame
-    public static PlayerTypes player1;
-    public static PlayerTypes player2;
+    [SerializeField] public static PlayerTypes player1;
+    [SerializeField] public static PlayerTypes player2;
     public static short Win;
     // Win-0
     //Lose-1
     //Drow-2
 
+    public static int Player1_;
+    public static int Player2_;
 
     int sceneNum = 0;
     //0-Main
     //1-Ready
     //2-Ingame
+
+    private void Start()
+    {
+        Player1_ = 99;
+        Player2_ = 99;
+    }
 
     private void Update()
     {
@@ -61,6 +70,7 @@ public class Main_single : MonoBehaviour
 
     public static void characterChoose_P1(int P1)   
     {
+        Player1_ = P1;
         switch (P1)
         {
             case 0:
@@ -68,7 +78,7 @@ public class Main_single : MonoBehaviour
             case 1:
                 player1 = PlayerTypes.P03; break;
             case 2:
-                player1 = RandomChar(); break;
+                player1 = RandomChar(Player1_); break;
             case 3:
                 player1 = PlayerTypes.P06; break;
             case 4:
@@ -78,16 +88,16 @@ public class Main_single : MonoBehaviour
             case 6:
                 player1 = PlayerTypes.P12; break;
             case 7:
-                player1 = RandomChar(); break;
+                player1 = RandomChar(Player1_); break;
             case 8:
                 player1 = PlayerTypes.P19; break;
             case 9:
                 player1 = PlayerTypes.P51; break;
-
         }
     }
     public static void characterChoose_P2(int P2)
     {
+        Player2_ = P2;
         switch (P2)
         {
             case 0:
@@ -95,7 +105,7 @@ public class Main_single : MonoBehaviour
             case 1:
                 player2 = PlayerTypes.P03; break;
             case 2:
-                player2 = RandomChar(); break;
+                player2 = RandomChar(Player2_); break;
             case 3:
                 player2 = PlayerTypes.P06; break;
             case 4:
@@ -105,7 +115,7 @@ public class Main_single : MonoBehaviour
             case 6:
                 player2 = PlayerTypes.P12; break;
             case 7:
-                player2 = RandomChar(); break;
+                player2 = RandomChar(Player2_); break;
             case 8:
                 player2 = PlayerTypes.P19; break;
             case 9:
@@ -113,14 +123,33 @@ public class Main_single : MonoBehaviour
         }
     }
 
-    static PlayerTypes RandomChar()
+    static PlayerTypes RandomChar(int a)
     {
         int R = UnityEngine.Random.Range(0, 9);
+        Thread.Sleep(20);
+        System.Random r = new System.Random((int)DateTime.Now.Ticks & 0x0000FFFF);
         if (R == 2)
             R++;
         if (R == 7)
             R--;
+        a = R;
+        Debug.Log(R);
+        return SwichChar(R);
 
+        
+    }
+    private Main_single() { }
+
+    public static Main_single getInstance()
+    {
+        if (instance == null)
+        {
+            instance = new Main_single();
+        }
+        return instance;
+    }
+    static PlayerTypes SwichChar(int R)
+    {
         switch (R)
         {
             case 0:
@@ -143,15 +172,4 @@ public class Main_single : MonoBehaviour
                 return PlayerTypes.P01;
         }
     }
-    private Main_single() { }
-
-    public static Main_single getInstance()
-    {
-        if (instance == null)
-        {
-            instance = new Main_single();
-        }
-        return instance;
-    }
-
 }

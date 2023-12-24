@@ -332,7 +332,7 @@ MonoBehaviour:
   moveDelay: 0.12
   changeDelay: 0.1
   colorDelay: 0.3
-  Deltime: 60
+  Deltime: 20
   Play1: 0
   Play2: 0
   shakeAmount: 0.1
