@@ -27,8 +27,6 @@ public class Main_single : MonoBehaviour
 
     private void Start()
     {
-        Player1_ = 99;
-        Player2_ = 99;
     }
 
     private void Update()
@@ -38,8 +36,7 @@ public class Main_single : MonoBehaviour
             //Ready
             case 1:
                 {
-                    
-    
+
                 }
                 break;
             //Fight
@@ -94,6 +91,8 @@ public class Main_single : MonoBehaviour
             case 9:
                 player1 = PlayerTypes.P51; break;
         }
+        if (Player1_ != 99)
+            Debug.Log(player1);
     }
     public static void characterChoose_P2(int P2)
     {
@@ -121,6 +120,8 @@ public class Main_single : MonoBehaviour
             case 9:
                 player2 = PlayerTypes.P51; break;
         }
+        if(Player2_ != 99)
+            Debug.Log(player2);
     }
 
     static PlayerTypes RandomChar(int a)
@@ -133,7 +134,6 @@ public class Main_single : MonoBehaviour
         if (R == 7)
             R--;
         a = R;
-        Debug.Log(R);
         return SwichChar(R);
 
         

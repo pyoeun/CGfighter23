@@ -54,6 +54,9 @@ public class ReadyManager : MonoBehaviour
     public bool Play1;
     public bool Play2;
 
+    bool pp_1;
+    bool pp_2;
+
     [SerializeField] float shakeAmount;
 
     bool aaa;
@@ -98,6 +101,8 @@ public class ReadyManager : MonoBehaviour
 
     void Start()
     {
+        pp_1 = false;
+        pp_2 = false;
         aaa = false;
         Play1 = false;
         Play2 = false;
@@ -472,14 +477,24 @@ public class ReadyManager : MonoBehaviour
         }
     }
 
+    
+
     private void OnPunchP1()
     {
-        Main_single.characterChoose_P1(P1);
+        if(!pp_1)
+        {
+            Main_single.characterChoose_P1(P1);
+            pp_1 = true;
+        }
         Play1 = true;
     }
     private void OnPunchP2()
     {
-        Main_single.characterChoose_P2(P2);
+        if(!pp_2)
+        {
+            Main_single.characterChoose_P2(P2);
+            pp_2 = true;
+        }
         Play2 = true;
     }
     void P1_InputUp()
