@@ -75,7 +75,8 @@ public class Main_single : MonoBehaviour
             case 1:
                 player1 = PlayerTypes.P03; break;
             case 2:
-                player1 = RandomChar(Player1_); break;
+                Player1_ = RandomChar();
+                player1 = SwichChar(Player1_); break;
             case 3:
                 player1 = PlayerTypes.P06; break;
             case 4:
@@ -85,14 +86,14 @@ public class Main_single : MonoBehaviour
             case 6:
                 player1 = PlayerTypes.P12; break;
             case 7:
-                player1 = RandomChar(Player1_); break;
+                Player1_ = RandomChar();
+                player1 = SwichChar(Player1_); break;
             case 8:
                 player1 = PlayerTypes.P19; break;
             case 9:
                 player1 = PlayerTypes.P51; break;
         }
-        if (Player1_ != 99)
-            Debug.Log(player1);
+        Ready_data.select1 = true;
     }
     public static void characterChoose_P2(int P2)
     {
@@ -104,7 +105,8 @@ public class Main_single : MonoBehaviour
             case 1:
                 player2 = PlayerTypes.P03; break;
             case 2:
-                player2 = RandomChar(Player2_); break;
+                Player2_ = RandomChar();
+                player2 = SwichChar(Player2_); break;
             case 3:
                 player2 = PlayerTypes.P06; break;
             case 4:
@@ -114,29 +116,25 @@ public class Main_single : MonoBehaviour
             case 6:
                 player2 = PlayerTypes.P12; break;
             case 7:
-                player2 = RandomChar(Player2_); break;
+                Player2_ = RandomChar();
+                player2 = SwichChar(Player2_); break;
             case 8:
                 player2 = PlayerTypes.P19; break;
             case 9:
                 player2 = PlayerTypes.P51; break;
         }
-        if(Player2_ != 99)
-            Debug.Log(player2);
+        Ready_data.select2 = true;
     }
 
-    static PlayerTypes RandomChar(int a)
+    static int RandomChar()
     {
         int R = UnityEngine.Random.Range(0, 9);
-        Thread.Sleep(20);
-        System.Random r = new System.Random((int)DateTime.Now.Ticks & 0x0000FFFF);
         if (R == 2)
             R++;
         if (R == 7)
             R--;
-        a = R;
-        return SwichChar(R);
-
-        
+        Debug.Log(R);
+        return R;
     }
     private Main_single() { }
 

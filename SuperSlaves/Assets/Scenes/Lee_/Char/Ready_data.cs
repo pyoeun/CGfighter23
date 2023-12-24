@@ -20,22 +20,50 @@ public class Ready_data : MonoBehaviour
     int P1_num;
     int P2_num;
 
+    public static bool select1;
+    public static bool select2;
+
     [SerializeField] string[] Name_list = new string[10];
     [SerializeField] string[] Skill_list = new string[10];
 
+    private void Start()
+    {
+        select1 = false;
+        select2 = false;
+    }
     void Update()
     {
-        P1_num = ReadyManager.P1;
-        P2_num = ReadyManager.P2;
-        if (P1_num == 2 || P1_num == 7)
-            P1_name.text = "Random";
-        else
+        if (select1)
+        {
+            Debug.Log(Main_single.Player1_);
+            P1_num = Main_single.Player1_;
             P1_name.text = Name_list[P1_num];
-        if (P2_num == 2 || P2_num == 7)
-            P2_name.text = "Random";
+            P1_skill.text = Skill_list[P1_num];
+        }
         else
+        {
+            P1_num = ReadyManager.P1;
+            if (P1_num == 2 || P1_num == 7)
+                P1_name.text = "Random";
+            else
+                P1_name.text = Name_list[P1_num];
+            P1_skill.text = Skill_list[P1_num];
+        }
+        if(select2)
+        {
+            P2_num = Main_single.Player2_;
             P2_name.text = Name_list[P2_num];
-        P1_skill.text = Skill_list[P1_num];
-        P2_skill.text = Skill_list[P2_num];
+            P2_skill.text = Skill_list[P2_num];
+        }
+        else
+        {
+            
+            P2_num = ReadyManager.P2;
+            if (P2_num == 2 || P2_num == 7)
+                P2_name.text = "Random";
+            else
+                P2_name.text = Name_list[P2_num];
+            P2_skill.text = Skill_list[P2_num];
+        }
     }
 }
