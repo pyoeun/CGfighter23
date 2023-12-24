@@ -255,6 +255,7 @@ MonoBehaviour:
   moveDelay: 0.12
   changeDelay: 0.1
   colorDelay: 0.3
+  Deltime: 60
   shakeAmount: 0.1
 --- !u!4 &119489514
 Transform:
