@@ -39,6 +39,9 @@ public class ReadyManager : MonoBehaviour
     short checkSpawn = 0;
     bool spawn = false;
 
+    public Text Timer;
+    int t;
+
     //Ű�Է�
     float size_1;
     float size_2;
@@ -349,6 +352,11 @@ public class ReadyManager : MonoBehaviour
         {
             time += Time.deltaTime;
             TimeBar.fillAmount = (20 - time) / 20;
+            if (t <= 0)
+                t = 0;
+            else
+                t = (int)(20 - time);
+            Timer.text = t.ToString();
             if (time <= Deltime)
             {
                 if ((Play1 == true && Play2 == true))

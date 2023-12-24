@@ -62,7 +62,7 @@ public class Ready_data : MonoBehaviour
         {
             Debug.Log("p2" + Main_single.Player2_);
             P2_num = Main_single.Player2_;
-            P2_img.GetComponent<SpriteRenderer>().sprite = PlImg_R[P2_num];
+            P2_img.GetComponent<SpriteRenderer>().sprite = PlImg_B[P2_num];
             P2_name.text = Name_list[P2_num];
             P2_skill.text = Skill_list[P2_num];
         }
@@ -70,7 +70,7 @@ public class Ready_data : MonoBehaviour
         {
             
             P2_num = ReadyManager.P2;
-            P2_img.GetComponent<SpriteRenderer>().sprite = PlImg_R[P2_num];
+            P2_img.GetComponent<SpriteRenderer>().sprite = PlImg_B[P2_num];
             if (P2_num == 2 || P2_num == 7)
             {
                 P2_name.text = "Random";
