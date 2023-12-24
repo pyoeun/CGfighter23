@@ -6,10 +6,11 @@ using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine.TextCore.Text;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ReadyManager : MonoBehaviour
 {
-    //�ִϸ��̼ǿ�
+    public Image TimeBar; 
 
     //������Ʈ �޾ƿ���
     [SerializeField] bool drowGizmo;                                //����� ��ο� ��/��
@@ -135,7 +136,7 @@ public class ReadyManager : MonoBehaviour
             {
                 case 0:
                     time += Time.deltaTime;
-                    if(time > 0.5f)
+                    if (time > 0.5f)
                     {
                         //Top
                         {
@@ -341,12 +342,13 @@ public class ReadyManager : MonoBehaviour
         else
         {
             time += Time.deltaTime;
-            if(time <= Deltime || (Play1 == true && Play2 == true))
+            TimeBar.fillAmount = (20 - time) / 20;
+            if (time <= Deltime)
             {
+                if ((Play1 == true && Play2 == true))
+                    time += 100;
                 if (Input.GetKey(KeyCode.Q))
                     OnPunchP1();
-                //if (Input.GetKey(KeyCode.RightShift))
-                //    OnPunchP2();
                 //Player1
                 {
                     if (!Play1)
@@ -476,7 +478,6 @@ public class ReadyManager : MonoBehaviour
     {
         Main_single.characterChoose_P2(P2);
         Play2 = true;
-        Debug.Log("앵");
     }
     void P1_InputUp()
     {
