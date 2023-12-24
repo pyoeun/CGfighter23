@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Main_single : MonoBehaviour
 {
@@ -128,12 +129,11 @@ public class Main_single : MonoBehaviour
 
     static int RandomChar()
     {
-        int R = UnityEngine.Random.Range(0, 9);
+        int R = Random.Range(0, 9);
         if (R == 2)
             R++;
         if (R == 7)
             R--;
-        Debug.Log(R);
         return R;
     }
     private Main_single() { }

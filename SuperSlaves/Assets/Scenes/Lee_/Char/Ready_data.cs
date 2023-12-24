@@ -35,7 +35,7 @@ public class Ready_data : MonoBehaviour
     {
         if (select1)
         {
-            Debug.Log(Main_single.Player1_);
+            Debug.Log("p1" + Main_single.Player1_);
             P1_num = Main_single.Player1_;
             P1_name.text = Name_list[P1_num];
             P1_skill.text = Skill_list[P1_num];
@@ -51,6 +51,7 @@ public class Ready_data : MonoBehaviour
         }
         if(select2)
         {
+            Debug.Log("p2" + Main_single.Player2_);
             P2_num = Main_single.Player2_;
             P2_name.text = Name_list[P2_num];
             P2_skill.text = Skill_list[P2_num];

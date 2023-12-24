@@ -379,6 +379,10 @@ public class ReadyManager : MonoBehaviour
                             P1 = P1_next;
                         }
                     }
+                    else
+                    {
+                        Pl_1.transform.DOMove(characterPos[Main_single.Player1_], 0.2f);
+                    }
                 }
                 //Player2
                 {
@@ -404,14 +408,16 @@ public class ReadyManager : MonoBehaviour
                             P2 = P2_next;
                         }
                     }
+                    else
+                    {
+                        Pl_2.transform.DOMove(characterPos[Main_single.Player2_], 0.2f);
+                    }
                 }
             }
             else
             {
                 if (aaa == false)
                 {
-                    Pl_1.transform.DOMove(characterPos[Main_single.Player1_], 0.2f);
-                    Pl_2.transform.DOMove(characterPos[Main_single.Player2_], 0.2f);
                     OnPunchP1();
                     OnPunchP2();
                     Invoke("InGameLode", 3f);
@@ -484,6 +490,7 @@ public class ReadyManager : MonoBehaviour
         if(!pp_1)
         {
             Main_single.characterChoose_P1(P1);
+            Pl_1.transform.DOScale(new Vector3(1, 1), 0.2f);
             pp_1 = true;
         }
         Play1 = true;
@@ -493,6 +500,7 @@ public class ReadyManager : MonoBehaviour
         if(!pp_2)
         {
             Main_single.characterChoose_P2(P2);
+            Pl_2.transform.DOScale(new Vector3(1, 1), 0.2f);
             pp_2 = true;
         }
         Play2 = true;
