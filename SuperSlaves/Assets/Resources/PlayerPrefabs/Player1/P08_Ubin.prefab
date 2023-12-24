@@ -208,7 +208,7 @@ MonoBehaviour:
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
   <JumpPower>k__BackingField: 25
-  <MoveSpeed>k__BackingField: 4.5
+  <MoveSpeed>k__BackingField: 5
 --- !u!50 &6523390650878106322
 Rigidbody2D:
   serializedVersion: 4
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc77ac41e40ebd04da2090a54a10ba67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLife: 100
+  MaxLife: 115
   CurrentLife: 0
   m_lifeSlider: {fileID: 0}
   m_gameManagerObj: {fileID: 0}
@@ -422,4 +422,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField: {fileID: 6523390650878106324}
   <Type>k__BackingField: 0
-  <Power>k__BackingField: 5
+  <Power>k__BackingField: 6

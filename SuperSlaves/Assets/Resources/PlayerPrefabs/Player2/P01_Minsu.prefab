@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField: {fileID: 6747993401943250276}
   <Type>k__BackingField: 0
-  <Power>k__BackingField: 5
+  <Power>k__BackingField: 7
 --- !u!1 &6747993401943250286
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c2455b236b6495742a836e727804160b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4abd67ee02fe5746a968e7346f18516, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
   <JumpPower>k__BackingField: 25
-  <MoveSpeed>k__BackingField: 4.5
+  <MoveSpeed>k__BackingField: 5
 --- !u!50 &6747993401943250278
 Rigidbody2D:
   serializedVersion: 4
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc77ac41e40ebd04da2090a54a10ba67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLife: 100
+  MaxLife: 110
   CurrentLife: 0
   m_lifeSlider: {fileID: 0}
   m_gameManagerObj: {fileID: 0}

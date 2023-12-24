@@ -422,4 +422,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField: {fileID: 6523390650878106324}
   <Type>k__BackingField: 0
-  <Power>k__BackingField: 5
+  <Power>k__BackingField: 5.5

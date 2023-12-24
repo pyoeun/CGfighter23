@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField: {fileID: 6747993401943250276}
   <Type>k__BackingField: 0
-  <Power>k__BackingField: 5
+  <Power>k__BackingField: 6
 --- !u!1 &6747993401943250286
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_skillSlider: {fileID: 0}
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
-  <JumpPower>k__BackingField: 25
-  <MoveSpeed>k__BackingField: 4.5
+  <JumpPower>k__BackingField: 20
+  <MoveSpeed>k__BackingField: 3.5
 --- !u!50 &6747993401943250278
 Rigidbody2D:
   serializedVersion: 4
