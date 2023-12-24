@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba19dc6bd344ce45af9c4b255aa3e6a, type: 3}
   m_Name: 01KMS
   m_EditorClassIdentifier: 
-  m_moveKeyCodes: 0100000003000000020000000400000005000000
+  m_moveKeyCodes: 0100000003000000020000000400000007000000
   <ComboPriorty>k__BackingField: 10
   <MoveType>k__BackingField: 8
   <PlayerType>k__BackingField: 1
