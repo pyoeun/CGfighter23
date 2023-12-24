@@ -19,13 +19,12 @@ public class Skill10Ozi : MonoBehaviour, ISkill
 
     public IEnumerator PlaySkill()
     {
-        Debug.Log("스킬 실행");
         float animTime = m_skillAnim.length;
         float standardSign = Mathf.Sign(this.transform.localScale.x) * m_playerSign;
         Vector3 defaultPos = this.transform.position;
         Vector3 standardPosition = new Vector3(m_camSize, -1, defaultPos.z);
         m_timer = 0;
-        m_gameManager.IsAbleMove = false;
+        //m_gameManager.IsAbleMove = false;
 
         while(m_timer < animTime)
         {
@@ -36,7 +35,7 @@ public class Skill10Ozi : MonoBehaviour, ISkill
             yield return null;
         }
 
-        m_gameManager.IsAbleMove = true;
+        //m_gameManager.IsAbleMove = true;
 
         yield break;
     }
