@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 6523390650878106322}
   - component: {fileID: 6523390650878106324}
   - component: {fileID: 6523390650878106327}
+  - component: {fileID: 4573802640701429958}
   m_Layer: 0
   m_Name: P19_Jun
   m_TagString: Player
@@ -263,6 +264,22 @@ CircleCollider2D:
   m_Offset: {x: -0.037874617, y: -0.3962347}
   serializedVersion: 2
   m_Radius: 0.25210652
+--- !u!114 &4573802640701429958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6523390650878106332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad66b25cc9f27b1489c1573cbbd7406e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_skillAnim: {fileID: 7400000, guid: 4fa7c5d0653a0b24b811044bb59b9f1e, type: 2}
+  m_isP1: 1
+  m_debuffTime: 1
+  m_power: 10
 --- !u!1 &6523390651650058609
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +424,7 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
-  m_Direction: 1
+  m_Direction: 0
 --- !u!114 &6523390652437654783
 MonoBehaviour:
   m_ObjectHideFlags: 0
