@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 6747993401943250278}
   - component: {fileID: 6747993401943250276}
   - component: {fileID: 6747993401943250277}
+  - component: {fileID: 4643714309935826221}
   m_Layer: 0
   m_Name: P10_Ozi
   m_TagString: Player
@@ -264,6 +265,21 @@ CircleCollider2D:
   m_Offset: {x: 0.03857147, y: -0.3793131}
   serializedVersion: 2
   m_Radius: 0.26690498
+--- !u!114 &4643714309935826221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747993401943250286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1937707e3538d3f49a1593038d37c0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_camSize: 16
+  m_skillAnim: {fileID: 7400000, guid: f5c33b1c6dc2822468b4fdd52c44bcca, type: 2}
+  m_playerSign: -1
 --- !u!1 &6747993402088967040
 GameObject:
   m_ObjectHideFlags: 0

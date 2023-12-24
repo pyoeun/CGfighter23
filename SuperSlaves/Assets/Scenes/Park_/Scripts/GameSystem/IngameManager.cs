@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class IngameManager : MonoBehaviour, IGameManager
 {
+    public bool IsAbleMove { get; set; }
     public GameObject Player1 { get; set; }
     public GameObject Player2 { get; set; }
 
@@ -27,6 +28,7 @@ public class IngameManager : MonoBehaviour, IGameManager
     private void Awake()
     {
         Sign = 1;
+        IsAbleMove = true;
         m_cam = Camera.main;
     }
 
