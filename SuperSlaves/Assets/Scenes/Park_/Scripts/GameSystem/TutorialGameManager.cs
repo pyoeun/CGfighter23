@@ -7,7 +7,8 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class TutorialGameManager : MonoBehaviour, IGameManager
 {
-    public bool IsAbleMove { get; set; }
+    public bool IsAbleMoveP1 { get; set; }
+    public bool IsAbleMoveP2 { get; set; }
 
     [SerializeField] private GameObject m_player1;
     [SerializeField] private GameObject m_player2;

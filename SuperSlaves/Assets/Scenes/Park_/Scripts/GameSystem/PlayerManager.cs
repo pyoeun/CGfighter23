@@ -37,8 +37,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (P1 != null && P2 != null)
         {
-            P1.transform.Translate(TargetDirection(1, m_p1Direction) * P1.MoveSpeed * Time.deltaTime);
-            P2.transform.Translate(TargetDirection(2, m_p2Direction) * P2.MoveSpeed * Time.deltaTime);
+            if(m_gameManager.IsAbleMoveP1)  P1.transform.Translate(TargetDirection(1, m_p1Direction) * P1.MoveSpeed * Time.deltaTime);
+            if(m_gameManager.IsAbleMoveP2)  P2.transform.Translate(TargetDirection(2, m_p2Direction) * P2.MoveSpeed * Time.deltaTime);
         }
     }
 
@@ -117,6 +117,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnPunchP1()
     {
+        if (!m_gameManager.IsAbleMoveP1) return;
         P1.AddKeys(Keys.Punch);
         if (m_gameManagerObj != null)
         {
@@ -126,6 +127,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnKickP1()
     {
+        if (!m_gameManager.IsAbleMoveP1) return;
         P1.AddKeys(Keys.Kick);
         if (m_gameManagerObj != null)
         {
@@ -135,6 +137,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnGuardP1()
     {
+        if (!m_gameManager.IsAbleMoveP1) return;
         P1.AddKeys(Keys.Guard);
         if (m_gameManagerObj != null)
         {
@@ -178,6 +181,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnPunchP2()
     {
+        if (!m_gameManager.IsAbleMoveP2) return;
         P2.AddKeys(Keys.Punch);
         if (m_gameManagerObj != null)
         {
@@ -187,6 +191,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnKickP2()
     {
+        if (!m_gameManager.IsAbleMoveP2) return;
         P2.AddKeys(Keys.Kick);
         if (m_gameManagerObj != null)
         {
@@ -196,6 +201,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnGuardP2()
     {
+        if (!m_gameManager.IsAbleMoveP2) return;
         P2.AddKeys(Keys.Guard);
         if (m_gameManagerObj != null)
         {

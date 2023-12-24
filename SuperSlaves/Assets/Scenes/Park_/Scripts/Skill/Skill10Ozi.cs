@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Skill10Ozi : MonoBehaviour, ISkill
 {
+    public bool IsDebuffSkill { get { return false; } }
     //카메라 절반 정도의 크기(양수)
     [SerializeField] private float m_camSize = 11;
 
@@ -38,5 +39,9 @@ public class Skill10Ozi : MonoBehaviour, ISkill
         //m_gameManager.IsAbleMove = true;
 
         yield break;
+    }
+    public void Debuff()
+    {
+
     }
 }

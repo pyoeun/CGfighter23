@@ -38,11 +38,6 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerMove(Moves pMove, int pComboPriorty)
     {
-        if (!GameObject.Find("IngameManager").GetComponent<IGameManager>().IsAbleMove)
-        {
-            return;
-        }
-
         if (pMove != Moves.None)
         {
             if (pComboPriorty >= m_currentComboPriorty)
