@@ -17,6 +17,8 @@ public class IngameManager : MonoBehaviour, IGameManager
     private float m_ingameTime;
 
     private Camera m_cam;
+    private float m_minCamPos = -9.11f;
+    private float m_maxCamPos = 9.11f;
 
     public float Distance { get; private set; }
     public int Sign { get; private set; }
@@ -47,20 +49,28 @@ public class IngameManager : MonoBehaviour, IGameManager
         switch (pPlayerType)
         {
             case 1:
-                if((pos1.x < 0f && pos2.x >= 1f) || (pos1.x > 1f && pos2.x <= 0))
+                if((pos1.x < 0f && pos2.x >= 1f) || (pos1.x > 1f && pos2.x <= 0f))
                 {
                     Vector3 temp1 = new Vector3(Mathf.Clamp(pos1.x, 0, 1), pos1.y, pos1.z);
                     Player1.transform.position = m_cam.ViewportToWorldPoint(temp1);
 
                     return false;
                 }
+                else if((pos1.x <= 0f && m_cam.transform.position.x <= m_minCamPos) || (pos1.x >= 1f && m_cam.transform.position.x >= m_maxCamPos))
+                {
+                    return false;
+                }
                 return true;
             case 2:
-                if ((pos1.x <= 0f && pos2.x > 1f) || (pos1.x >= 1f && pos2.x < 0))
+                if ((pos1.x <= 0f && pos2.x > 1f) || (pos1.x >= 1f && pos2.x < 0f))
                 {
                     Vector3 temp2 = new Vector3(Mathf.Clamp(pos2.x, 0, 1), pos2.y, pos2.z);
                     Player2.transform.position = m_cam.ViewportToWorldPoint(temp2);
 
+                    return false;
+                }
+                else if ((pos2.x <= 0f && m_cam.transform.position.x <= m_minCamPos) || (pos2.x >= 1f && m_cam.transform.position.x >= m_maxCamPos))
+                {
                     return false;
                 }
                 return true;
@@ -74,7 +84,8 @@ public class IngameManager : MonoBehaviour, IGameManager
     {
         if (IsAbletoMove(1) && IsAbletoMove(2))
         {
-            m_cam.transform.position = new Vector3((Player1.transform.position.x + Player2.transform.position.x) / 2, 0, -10);
+            m_cam.transform.position = new Vector3(Mathf.Clamp((Player1.transform.position.x + Player2.transform.position.x) / 2
+                                                    , m_minCamPos, m_maxCamPos), 0, -10);
         }
     }
 
