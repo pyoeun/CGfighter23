@@ -74,7 +74,7 @@ public class PlayerManager : MonoBehaviour
                 }
                 break;
             default:
-                Debug.LogError("�׷����� ����");
+                Debug.LogError("그럴리가 없다.");
                 break;
         }
         return inputVec;
