@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private ISkill m_skill;
+
     private Animator m_animator;
     private ControlManager m_controlManager;
     private Rigidbody2D m_rigid;
@@ -26,12 +28,21 @@ public class PlayerController : MonoBehaviour
         {
             m_rigid = this.GetComponent<Rigidbody2D>();
         }
+        if(m_skill == null)
+        {
+            m_skill = this.GetComponent<ISkill>();
+        }
 
         IsOnGround = false;
     }
 
     public void PlayerMove(Moves pMove, int pComboPriorty)
     {
+        if (!GameObject.Find("IngameManager").GetComponent<IGameManager>().IsAbleMove)
+        {
+            return;
+        }
+
         if (pMove != Moves.None)
         {
             if (pComboPriorty >= m_currentComboPriorty)
@@ -84,7 +95,7 @@ public class PlayerController : MonoBehaviour
                     {
                         m_animator.SetTrigger("Skill");
                         Debug.Log("Skill~!!!");
-                        m_controlManager.PlaySkill();
+                        StartCoroutine(m_skill.PlaySkill());
                     }
                     break;
                 default:

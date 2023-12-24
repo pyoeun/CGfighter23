@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IGameManager
 {
     public float Distance { get; }
+    public bool IsAbleMove { get; set; }
     public void Hit(Vector3 pPos);
     public void Defense(Vector3 pPos);
     public void UpdateDistance();
