@@ -49,8 +49,8 @@ public class ReadyManager : MonoBehaviour
     int P1_next;
     int P2_next;
 
-    public static bool Play1;
-    public static bool Play2;
+    public bool Play1;
+    public bool Play2;
 
     [SerializeField] float shakeAmount;
 
@@ -341,11 +341,11 @@ public class ReadyManager : MonoBehaviour
         else
         {
             time += Time.deltaTime;
-            if(time <= Deltime)
+            if(time <= Deltime || (Play1 == true && Play2 == true))
             {
                 if (Input.GetKey(KeyCode.Q))
                     OnPunchP1();
-                //if (Input.GetKey(KeyCode.Slash))
+                //if (Input.GetKey(KeyCode.RightShift))
                 //    OnPunchP2();
                 //Player1
                 {
@@ -357,7 +357,8 @@ public class ReadyManager : MonoBehaviour
                             {
                                 Pl_1.transform.DOMove(new Vector3(0, -selectPos), 0.2f);
                                 Pl_1.transform.DOScale(new Vector3(1, boxSize.y + gapY + (gapY / 3) + 0.02f), 0.2f);
-                                cha[P1].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
+                                if (P1 != 2 && P1 != 7)
+                                    cha[P1].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
                             }
                             else
                             {
@@ -381,7 +382,8 @@ public class ReadyManager : MonoBehaviour
                             {
                                 Pl_2.transform.DOMove(new Vector3(0, -selectPos), 0.2f);
                                 Pl_2.transform.DOScale(new Vector3(1, boxSize.y + gapY + (gapY / 3) + 0.02f), 0.2f);
-                                cha[P2].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
+                                if (P2 != 2 && P2 != 7)
+                                    cha[P2].transform.DOScale(new Vector3(size_1, size_1), 0.2f);
                             }
                             else
                             {
@@ -474,6 +476,7 @@ public class ReadyManager : MonoBehaviour
     {
         Main_single.characterChoose_P2(P2);
         Play2 = true;
+        Debug.Log("앵");
     }
     void P1_InputUp()
     {
@@ -553,6 +556,6 @@ public class ReadyManager : MonoBehaviour
     }
     private void InGameLode()
     {
-        //Scene Lode
+        Debug.Log("신변경");
     }
 }
