@@ -334,7 +334,7 @@ public class ReadyManager : MonoBehaviour
                     }
                     break; //����ȭ�� ������Ʈ ����
             }
-        } //
+        }
         else
         {
             //Player1
@@ -435,7 +435,13 @@ public class ReadyManager : MonoBehaviour
 
     private void OnPunchP1()
     {
-       
+        Main_single.characterChoose_P1(P1);
+        Play1 = true;
+    }
+    private void OnPunchP2()
+    {
+        Main_single.characterChoose_P2(P2);
+        Play2 = true;
     }
     void P1_InputUp()
     {

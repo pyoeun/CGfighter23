@@ -8,10 +8,13 @@ public class Main_single : MonoBehaviour
 {
     private static Main_single instance;
 
-    //인게임
+    //InGame
     public static PlayerTypes player1;
     public static PlayerTypes player2;
-    short Win;
+    public static short Win;
+    // Win-0
+    //Lose-1
+    //Drow-2
 
 
     int sceneNum = 0;
@@ -45,7 +48,7 @@ public class Main_single : MonoBehaviour
             sceneNum = 2;
     }
 
-    public static void characterChoose_P1(int P1)
+    public static void characterChoose_P1(int P1)   
     {
         switch (P1)
         {
