@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: df4c1f63804c196439d8e7b945679500, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dfd634afdcddd3d45859062b20a26e4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -179,7 +179,7 @@ Animator:
   m_GameObject: {fileID: 6523390650878106332}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 86612a829bc4e4342b66eb9a21d179ce, type: 2}
+  m_Controller: {fileID: 22100000, guid: e2d4bbbdb1f789744bde3fcae6febb9f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerName: P1
-  <m_playerType>k__BackingField: 10
+  <m_playerType>k__BackingField: 1
   m_skillCooltime: 5
   m_skillSlider: {fileID: 0}
   <PressedKeys>k__BackingField: 

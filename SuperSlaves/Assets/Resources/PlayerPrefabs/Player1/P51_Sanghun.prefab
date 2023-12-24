@@ -179,7 +179,7 @@ Animator:
   m_GameObject: {fileID: 6523390650878106332}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 86612a829bc4e4342b66eb9a21d179ce, type: 2}
+  m_Controller: {fileID: 22100000, guid: 200ee7b755ec1134b815b9cc1a3929ed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerName: P1
-  <m_playerType>k__BackingField: 10
+  <m_playerType>k__BackingField: 24
   m_skillCooltime: 5
   m_skillSlider: {fileID: 0}
   <PressedKeys>k__BackingField: 
