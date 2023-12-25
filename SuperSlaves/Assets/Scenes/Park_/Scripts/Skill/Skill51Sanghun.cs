@@ -18,7 +18,10 @@ public class Skill51Sanghun : MonoBehaviour, ISkill
     private void Awake()
     {
         m_gameManager = GameObject.Find("IngameManager").GetComponent<IGameManager>();
+    }
 
+    private void Start()
+    {
         m_target = FindObjectsOfType<ControlManager>().FirstOrDefault(n => n.GetComponent<ISkill>() != this).gameObject;
     }
 

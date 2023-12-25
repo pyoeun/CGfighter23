@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Park_/TitleScene.unity
     guid: 8ce035b719363804ebc10d517cb80366
+  - enabled: 1
+    path: Assets/Scenes/Park_/EndingScene.unity
+    guid: 65066cee694402a4c812608c64dfe962
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6fdc6a606b7ed8e449959fa6120d5907, type: 2}

@@ -113,7 +113,7 @@ public class IngameManager : MonoBehaviour, IGameManager
     public void UpdateTimer()
     {
         m_ingameTime -= Time.deltaTime;
-        m_IngameTimer.text = ((int)m_ingameTime).ToString();
+        m_IngameTimer.text = Mathf.Clamp((int)m_ingameTime, 0, m_maxPlayTime).ToString();
 
         if (m_ingameTime <= 0)
         {
