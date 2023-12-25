@@ -49,7 +49,7 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
-  m_Direction: 1
+  m_Direction: 0
 --- !u!114 &6747993401668162459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 6747993401943250278}
   - component: {fileID: 6747993401943250276}
   - component: {fileID: 6747993401943250277}
+  - component: {fileID: 6094721664319888406}
   m_Layer: 0
   m_Name: P19_Jun
   m_TagString: Player
@@ -204,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerName: P2
   <PlayerType>k__BackingField: 19
-  m_skillCooltime: 5
+  m_skillCooltime: 10
   m_skillSlider: {fileID: 0}
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
@@ -264,6 +265,23 @@ CircleCollider2D:
   m_Offset: {x: 0.03857147, y: -0.3793131}
   serializedVersion: 2
   m_Radius: 0.26690498
+--- !u!114 &6094721664319888406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747993401943250286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad66b25cc9f27b1489c1573cbbd7406e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_skillAnim: {fileID: 7400000, guid: 55a408a9262027d44ae9a507ce30ca20, type: 2}
+  m_isP1: 0
+  m_debuffTime: 1
+  m_power: 35
+  m_moveTime: 0
 --- !u!1 &6747993402088967040
 GameObject:
   m_ObjectHideFlags: 0

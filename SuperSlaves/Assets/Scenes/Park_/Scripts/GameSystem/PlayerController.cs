@@ -38,11 +38,6 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerMove(Moves pMove, int pComboPriorty)
     {
-        if (!GameObject.Find("IngameManager").GetComponent<IGameManager>().IsAbleMove)
-        {
-            return;
-        }
-
         if (pMove != Moves.None)
         {
             if (pComboPriorty >= m_currentComboPriorty)
@@ -95,6 +90,7 @@ public class PlayerController : MonoBehaviour
                     {
                         m_animator.SetTrigger("Skill");
                         Debug.Log("Skill~!!!");
+                        m_controlManager.PlaySkill();
                         StartCoroutine(m_skill.PlaySkill());
                     }
                     break;

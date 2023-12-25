@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerName: P1
   <PlayerType>k__BackingField: 3
-  m_skillCooltime: 5
+  m_skillCooltime: 10
   m_skillSlider: {fileID: 0}
   <PressedKeys>k__BackingField: 
   <ComboResetTime>k__BackingField: 0.35
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField: {fileID: 6523390650878106324}
   <Type>k__BackingField: 0
-  <Power>k__BackingField: 6.5
+  <Power>k__BackingField: 6
 --- !u!212 &5891080557958678786
 SpriteRenderer:
   m_ObjectHideFlags: 0

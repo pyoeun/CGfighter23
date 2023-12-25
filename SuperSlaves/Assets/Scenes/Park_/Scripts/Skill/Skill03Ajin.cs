@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Skill03Ajin : MonoBehaviour, ISkill
 {
+    public bool IsDebuffSkill { get { return false; } }
     [SerializeField] private AnimationClip m_skillAnim;
     private float m_timer;
     private IGameManager m_gameManager;
@@ -29,5 +30,9 @@ public class Skill03Ajin : MonoBehaviour, ISkill
         //m_gameManager.IsAbleMove = true;
 
         yield break;
+    }
+    public void Debuff()
+    {
+
     }
 }

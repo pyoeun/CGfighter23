@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class IngameManager : MonoBehaviour, IGameManager
 {
-    public bool IsAbleMove { get; set; }
+    public bool IsAbleMoveP1 { get; set; }
+    public bool IsAbleMoveP2 { get; set; }
     public GameObject Player1 { get; set; }
     public GameObject Player2 { get; set; }
 
@@ -28,7 +29,8 @@ public class IngameManager : MonoBehaviour, IGameManager
     private void Awake()
     {
         Sign = 1;
-        IsAbleMove = true;
+        IsAbleMoveP1 = true;
+        IsAbleMoveP2 = true;
         m_cam = Camera.main;
     }
 
@@ -111,7 +113,7 @@ public class IngameManager : MonoBehaviour, IGameManager
     public void UpdateTimer()
     {
         m_ingameTime -= Time.deltaTime;
-        m_IngameTimer.text = ((int)m_ingameTime).ToString();
+        m_IngameTimer.text = Mathf.Clamp((int)m_ingameTime, 0, m_maxPlayTime).ToString();
 
         if (m_ingameTime <= 0)
         {
