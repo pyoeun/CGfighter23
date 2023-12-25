@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+<<<<<<< HEAD
+=======
+using UnityEngine.SceneManagement;
+>>>>>>> parent of da54b47 (TutorialBugfix)
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EndingScenePrinter : MonoBehaviour
