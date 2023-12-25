@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad66b25cc9f27b1489c1573cbbd7406e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_skillAnim: {fileID: 0}
+  m_skillAnim: {fileID: 7400000, guid: 55a408a9262027d44ae9a507ce30ca20, type: 2}
   m_isP1: 0
   m_debuffTime: 1
   m_power: 35

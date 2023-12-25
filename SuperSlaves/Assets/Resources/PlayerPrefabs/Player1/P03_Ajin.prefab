@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Player>k__BackingField: {fileID: 6523390650878106324}
   <Type>k__BackingField: 0
-  <Power>k__BackingField: 6.5
+  <Power>k__BackingField: 6
 --- !u!212 &5891080557958678786
 SpriteRenderer:
   m_ObjectHideFlags: 0
