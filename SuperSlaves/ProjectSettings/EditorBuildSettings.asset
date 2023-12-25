@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Park_/IntroScene.unity
+    guid: 462ed10ffb89c6a4f8260a6d23aada7a
+  - enabled: 1
     path: Assets/Scenes/Park_/MainScene.unity
     guid: 3d53d03abc4e7bd4e9dc132673bc457c
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lee_/Ready.unity
     guid: 40ae062f06051b745948151935ecdb05
-  - enabled: 1
-    path: Assets/Scenes/Park_/IntroScene.unity
-    guid: 462ed10ffb89c6a4f8260a6d23aada7a
   - enabled: 1
     path: Assets/Scenes/Park_/TitleScene.unity
     guid: 8ce035b719363804ebc10d517cb80366
