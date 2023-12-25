@@ -723,9 +723,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 --- !u!82 &519420033
 AudioSource:
   m_ObjectHideFlags: 0
@@ -822,8 +819,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
->>>>>>> parent of e641812 (.)
 --- !u!1 &730888870
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,10 +912,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-<<<<<<< HEAD
->>>>>>> da54b476f4e52d5cab4665e6720191948673c068
-=======
->>>>>>> parent of e641812 (.)
 --- !u!1 &756544372
 GameObject:
   m_ObjectHideFlags: 0

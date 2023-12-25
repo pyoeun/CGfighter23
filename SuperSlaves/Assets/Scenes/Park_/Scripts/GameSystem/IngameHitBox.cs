@@ -27,7 +27,7 @@ public class IngameHitBox : MonoBehaviour
             {
                 hits.Add(hitbox);
                 m_hitPos = this.transform.GetChild(0).position;
-                if (transform.parent.GetComponent<ISkill>().IsDebuffSkill)
+                if (transform.parent.GetComponent<ISkill>() != null && transform.parent.GetComponent<ISkill>().IsDebuffSkill)
                 {
                     transform.parent.GetComponent<ISkill>().Debuff();
                 }

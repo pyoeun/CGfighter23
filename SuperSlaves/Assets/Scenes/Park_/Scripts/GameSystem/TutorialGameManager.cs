@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class TutorialGameManager : MonoBehaviour, IGameManager
 {
@@ -36,6 +35,10 @@ public class TutorialGameManager : MonoBehaviour, IGameManager
     private void Awake()
     {
         m_cam = Camera.main;
+
+        IsAbleMoveP1 = true;
+        IsAbleMoveP2 = true;
+
         IsPlayingTutorial = new Boolean[System.Enum.GetValues(typeof(TutorialSeq)).Length];
         IsReady = new Boolean[System.Enum.GetValues(typeof(TutorialSeq)).Length];
         for (int i = 0; i < System.Enum.GetValues(typeof(TutorialSeq)).Length; i++)
