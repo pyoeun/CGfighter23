@@ -280,7 +280,8 @@ MonoBehaviour:
   m_skillAnim: {fileID: 0}
   m_isP1: 0
   m_debuffTime: 1
-  m_power: 10
+  m_power: 35
+  m_moveTime: 0
 --- !u!1 &6747993402088967040
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,10 +11,15 @@ public class Skill19Jun : MonoBehaviour, ISkill
     [SerializeField] private bool m_isP1 = true;
     [SerializeField] private float m_debuffTime;
     [SerializeField] private float m_power;
+    [SerializeField] private float m_moveTime = 0;
 
     private void Awake()
     {
         m_gameManager = GameObject.Find("IngameManager").GetComponent<IGameManager>();
+        if(m_moveTime == 0)
+        {
+            m_moveTime = m_skillAnim.length / 3;
+        }
     }
 
     public void Debuff()
@@ -43,7 +48,10 @@ public class Skill19Jun : MonoBehaviour, ISkill
         while (m_timer < animTime)
         {
             m_timer += Time.deltaTime;
-            this.transform.Translate((Mathf.Sign(this.transform.localScale.x) * Vector3.right * m_power) * Time.deltaTime);
+            if (m_timer < m_moveTime)
+            {
+                this.transform.Translate((Mathf.Sign(this.transform.localScale.x) * Vector3.right * m_power) * Time.deltaTime);
+            }
             yield return null;
         }
 

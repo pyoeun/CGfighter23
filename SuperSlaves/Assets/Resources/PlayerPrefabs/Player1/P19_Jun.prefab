@@ -279,7 +279,8 @@ MonoBehaviour:
   m_skillAnim: {fileID: 7400000, guid: 4fa7c5d0653a0b24b811044bb59b9f1e, type: 2}
   m_isP1: 1
   m_debuffTime: 1
-  m_power: 10
+  m_power: 35
+  m_moveTime: 0
 --- !u!1 &6523390651650058609
 GameObject:
   m_ObjectHideFlags: 0

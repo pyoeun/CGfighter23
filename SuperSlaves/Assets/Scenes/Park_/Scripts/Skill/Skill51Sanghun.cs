@@ -28,10 +28,10 @@ public class Skill51Sanghun : MonoBehaviour, ISkill
         m_timer = 0;
 
         IsDebuffSkill = true;
-        m_skillObj.transform.position = m_target.transform.position;
 
         while (m_timer < animTime)
         {
+        m_skillObj.transform.position = m_target.transform.position;
             m_timer += Time.deltaTime;
             yield return null;
         }
