@@ -93,9 +93,9 @@ public class Main_single : MonoBehaviour
             case 3:
                 player1 = PlayerTypes.P06; break;
             case 4:
-                player1 = PlayerTypes.P08; break;
-            case 5:
                 player1 = PlayerTypes.P10; break;
+            case 5:
+                player1 = PlayerTypes.P08; break;
             case 6:
                 player1 = PlayerTypes.P12; break;
             case 7:
@@ -123,9 +123,9 @@ public class Main_single : MonoBehaviour
             case 3:
                 player2 = PlayerTypes.P06; break;
             case 4:
-                player2 = PlayerTypes.P08; break;
-            case 5:
                 player2 = PlayerTypes.P10; break;
+            case 5:
+                player2 = PlayerTypes.P08; break;
             case 6:
                 player2 = PlayerTypes.P12; break;
             case 7:
@@ -169,9 +169,9 @@ public class Main_single : MonoBehaviour
             case 3:
                 return PlayerTypes.P06;
             case 4:
-                return PlayerTypes.P08;
-            case 5:
                 return PlayerTypes.P10;
+            case 5:
+                return PlayerTypes.P08;
             case 6:
                 return PlayerTypes.P12;
             case 8:
