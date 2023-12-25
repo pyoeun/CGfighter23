@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EndingScenePrinter : MonoBehaviour
@@ -15,6 +16,10 @@ public class EndingScenePrinter : MonoBehaviour
 
     [SerializeField] private SpriteRenderer m_player1;
     [SerializeField] private SpriteRenderer m_player2;
+
+    [SerializeField] private float m_maxEndingSceneTime = 3f;
+    [SerializeField] private float m_minEndingSceneTime = 1.5f;
+    private float m_timer = 0;
 
     private GameObject m_winnerObj;
 
@@ -60,6 +65,15 @@ public class EndingScenePrinter : MonoBehaviour
                 Debug.LogError("그럴리가없다.");
                 break;
 
+        }
+    }
+
+    private void Update()
+    {
+        m_timer += Time.deltaTime;
+        if((Input.anyKeyDown && m_timer >= m_minEndingSceneTime) || m_timer >= m_maxEndingSceneTime)
+        {
+            SceneManager.LoadScene("TitleScene");
         }
     }
 
