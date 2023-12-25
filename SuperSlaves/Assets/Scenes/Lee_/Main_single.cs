@@ -26,10 +26,18 @@ public class Main_single : MonoBehaviour
     //1-Ready
     //2-Ingame
 
-    private void Start()
+    void Awake()
     {
+        if (null == instance)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
-
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
