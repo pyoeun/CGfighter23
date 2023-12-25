@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
                     {
                         m_animator.SetTrigger("Skill");
                         Debug.Log("Skill~!!!");
+                        m_controlManager.PlaySkill();
                         StartCoroutine(m_skill.PlaySkill());
                     }
                     break;
