@@ -104,7 +104,6 @@ public class ReadyManager : MonoBehaviour
 
     void Start()
     {
-        t = 20;
         pp_1 = false;
         pp_2 = false;
         aaa = false;

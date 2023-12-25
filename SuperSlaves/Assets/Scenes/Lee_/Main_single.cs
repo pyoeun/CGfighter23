@@ -26,17 +26,8 @@ public class Main_single : MonoBehaviour
     //1-Ready
     //2-Ingame
 
-    void Awake()
+    private void Start()
     {
-        if (null == instance)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     private void Update()
@@ -157,7 +148,6 @@ public class Main_single : MonoBehaviour
         {
             instance = new Main_single();
         }
-
         return instance;
     }
     static PlayerTypes SwichChar(int R)
