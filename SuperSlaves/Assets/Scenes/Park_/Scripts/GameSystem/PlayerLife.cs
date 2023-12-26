@@ -46,12 +46,14 @@ public class PlayerLife : MonoBehaviour
         if (m_isP1)
         {
             m_lifeSlider = GameObject.Find("P1HP").GetComponent<Slider>();
+            m_lifeSlider.maxValue = this.MaxLife;
             if (FindObjectOfType<PlayerManager>() != null) FindObjectOfType<PlayerManager>().P1 = this.gameObject.GetComponent<ControlManager>();
             if (m_ingameManager != null) m_ingameManager.Player1 = this.gameObject;
         }
         else
         {
             m_lifeSlider = GameObject.Find("P2HP").GetComponent<Slider>();
+            m_lifeSlider.maxValue = this.MaxLife;
             if (FindObjectOfType<PlayerManager>() != null) FindObjectOfType<PlayerManager>().P2 = this.gameObject.GetComponent<ControlManager>();
             if (m_ingameManager != null) m_ingameManager.Player2 = this.gameObject;
         }

@@ -138,6 +138,9 @@ public class IngameManager : MonoBehaviour, IGameManager
     {
         //Time.timeScale = 0;
 
+        IsAbleMoveP1 = false;
+        IsAbleMoveP2 = false;
+
         var p1Life = Player1.GetComponent<PlayerLife>().LifeRate;
         var p2Life = Player2.GetComponent<PlayerLife>().LifeRate;
 
