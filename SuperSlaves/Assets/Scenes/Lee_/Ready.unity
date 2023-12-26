@@ -396,7 +396,7 @@ MonoBehaviour:
   PlImg_R:
   - {fileID: 21300000, guid: d9f98b881b4febf4a866dfe16c1417c7, type: 3}
   - {fileID: 21300000, guid: 0064ea2a28b7beb4bb67e70458c2cd33, type: 3}
-  - {fileID: 21300000, guid: e462d4cb7b919b940be4db88fe431b48, type: 3}
+  - {fileID: 21300000, guid: b025cde22759b5d47a0fb21d55db4433, type: 3}
   - {fileID: 21300000, guid: d53030df95833c64fa4713b1161036b2, type: 3}
   - {fileID: 21300000, guid: 0d1ceb33da0b29740a4ce5e599ea31ff, type: 3}
   - {fileID: 21300000, guid: 9998ca160f2e4dc45b52a63a6ad2d059, type: 3}
@@ -407,7 +407,7 @@ MonoBehaviour:
   PlImg_B:
   - {fileID: 21300000, guid: 9ce6d7428aa1c0b419a97fe967449c70, type: 3}
   - {fileID: 21300000, guid: ab1af9a07eab4604aa8af45ab414719c, type: 3}
-  - {fileID: 21300000, guid: 54f8dfb746800394c935e06f66b074fa, type: 3}
+  - {fileID: 21300000, guid: 53464430f5a68944589bf2cf3860b926, type: 3}
   - {fileID: 21300000, guid: f713d4311def7db4bbf4856f7dc1a8bd, type: 3}
   - {fileID: 21300000, guid: 3d6b11b3d1cb2484eb7eca5a69e1bc17, type: 3}
   - {fileID: 21300000, guid: 9998ca160f2e4dc45b52a63a6ad2d059, type: 3}
@@ -890,7 +890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: select = 'Red Button'
+  m_Text: select = 'Q'
 --- !u!222 &756544375
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1282,7 +1282,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: select = 'Red Button'
+  m_Text: select = 'Left Click'
 --- !u!222 &1072665192
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dialogueManager: {fileID: 555548770}
-  m_platform: NoriBox
+  m_platform: PC
   m_dialogueCanvas: {fileID: 631517610}
   m_tutorialGameManager: {fileID: 1780563561}
 --- !u!114 &555548770
