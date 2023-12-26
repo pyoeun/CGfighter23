@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_camSize: 16
-  m_skillDistance: 0
+  m_skillDistance: 11
   m_skillAnim: {fileID: 7400000, guid: f5c33b1c6dc2822468b4fdd52c44bcca, type: 2}
   m_playerSign: -1
 --- !u!1 &6747993402088967040
