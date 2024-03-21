@@ -57,14 +57,12 @@ public class PlayerController : MonoBehaviour
                     if (m_canJump)
                     {
                         m_animator.SetTrigger("Jump");
-                        //Jump();
                     }
                     break;
                 case Moves.JumpingKick:
                     if (m_canJump)
                     {
                         m_animator.SetTrigger("JumpingKick");
-                        //Jump();
                     }
                     break;
 
@@ -89,7 +87,6 @@ public class PlayerController : MonoBehaviour
                     if (m_controlManager.CanSkill)
                     {
                         m_animator.SetTrigger("Skill");
-                        Debug.Log("Skill~!!!");
                         m_controlManager.PlaySkill();
                         StartCoroutine(m_skill.PlaySkill());
                     }
@@ -115,6 +112,14 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(IgnorePlayer(collision.gameObject));
             }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            IsOnGround = false;
         }
     }
 
@@ -147,6 +152,7 @@ public class PlayerController : MonoBehaviour
     {
         while (!IsOnGround)
         {
+            Debug.Log("날내려보내줘");
             pPlayer.layer = 3;
             yield return null;
         }
